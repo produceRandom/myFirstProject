@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="script/vue.min.js" ></script>
+	<body>
+		<template lang="html">
+		  <div id="app">
+		    <app-header></app-header>
+		    <transition name="router-fade">
+		      <router-view></router-view>
+		    </transition>
+		  </div>
+		</template>
+		
+		<script>
+		import AppHeader from './header.vue'
+		export default {
+		  components: {AppHeader}
+		}
+		</script>
+	</body>
+</html>

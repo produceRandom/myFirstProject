@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+    <html>
+    <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fancy Product Designer</title>
+
+    <!-- Style sheets -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- The CSS for the plugin itself - required -->
+	<link rel="stylesheet" type="text/css" href="css/FancyProductDesigner-all.min.css" />
+
+    <!-- Include js files -->
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+
+	<!-- HTML5 canvas library - required -->
+	<script src="js/fabric.min.js" type="text/javascript"></script>
+	<!-- The plugin itself - required -->
+    <script src="js/FancyProductDesigner-all.min.js" type="text/javascript"></script>
+    <!-- Include Plus Add-On -->
+    <script src="js/FancyProductDesignerPlus.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+	    jQuery(document).ready(function(){
+
+		    if(typeof FancyProductDesignerPlus === 'undefined') {
+			    alert("For this demo the Fancy Product Designer Plus Add-On is required!");
+			    return false;
+		    }
+
+	    	var $yourDesigner = $('#clothing-designer'),
+	    		pluginOpts = {
+		    		stageWidth: 1200,
+		    		editorMode: false,
+		    		fonts: [
+				    	{name: 'Helvetica'},
+				    	{name: 'Times New Roman'},
+				    	{name: 'Pacifico', url: 'Enter_URL_To_Pacifico'},
+				    	{name: 'Arial'},
+			    		{name: 'Lobster', url: 'google'}
+			    	],
+		    		customTextParameters: {
+			    		colors: false,
+			    		removable: true,
+			    		resizable: true,
+			    		draggable: true,
+			    		rotatable: true,
+			    		autoCenter: true,
+			    		boundingBox: "Base"
+			    	},
+		    		customImageParameters: {
+			    		draggable: true,
+			    		removable: true,
+			    		resizable: true,
+			    		rotatable: true,
+			    		colors: '#000',
+			    		autoCenter: true,
+			    		boundingBox: "Base"
+			    	},
+			    	actions:  {
+						'top': ['download','print', 'snap', 'preview-lightbox'],
+						'right': ['magnify-glass', 'zoom', 'reset-product', 'qr-code', 'ruler'],
+						'bottom': ['undo','redo'],
+						'left': ['manage-layers','info','save','load']
+					},
+					mainBarModules: ['names-numbers', 'drawing', 'products'],
+					colorSelectionPlacement: 'inside-br',
+					namesNumbersDropdown: ['S', 'M', 'L', 'XL'],
+					namesNumbersEntryPrice: 10,
+					bulkVariationsPlacement: '#my-variations',
+					bulkVariations: {'Size': ['XL', 'L', 'M', 'S'], 'Color': ['Red', 'Blue']}
+	    		},
+	    	yourDesigner = new FancyProductDesigner($yourDesigner, pluginOpts);
+
+	    	//event handler when the price is changing
+			$yourDesigner.on('priceChange', function(evt, price, currentPrice) {
+				$('#thsirt-price').text(currentPrice);
+			});
+
+	    });
+    </script>
+    </head>
+
+    <body>
+    	<div id="main-container">
+          	<h3 id="clothing">Clothing Designer</h3>
+          	<div id="clothing-designer" class="fpd-container fpd-shadow-2 fpd-sidebar fpd-tabs fpd-tabs-side fpd-top-actions-centered fpd-bottom-actions-centered fpd-views-inside-left">
+          		<div class="fpd-product" title="Shirt Front" data-thumbnail="images/yellow_shirt/front/preview.png" data-mainelement="Base">
+	    			<img src="images/yellow_shirt/front/base.png" title="Base" data-parameters='{"left": 325, "top": 329, "colors": "#d59211,#990000,#000,#ccc", "price": 20, "colorLinkGroup": "shirt"}' />
+			  		<img src="images/yellow_shirt/front/shadows.png" title="Shadow" data-parameters='{"left": 325, "top": 329}' />
+			  		<img src="images/yellow_shirt/front/body.png" title="Hightlights" data-parameters='{"left": 322, "top": 137}' />
+			  		<span title="Your Name" data-parameters='{"boundingBox": "Base", "left": 326, "top": 232, "zChangeable": true, "removable": true, "draggable": true, "rotatable": true, "resizable": true, "colors": "#000000", "textPlaceholder": true}' >Your Name</span>
+			  		<span title="Your Number" data-parameters='{"boundingBox": "Base", "left": 320, "top": 280, "zChangeable": true, "removable": true, "draggable": true, "rotatable": true, "resizable": true, "colors": "#000000", "numberPlaceholder": [0,10], "textSize": 80}' >10</span>
+			  		<div class="fpd-product" title="Shirt Back" data-thumbnail="images/yellow_shirt/back/preview.png">
+		    			<img src="images/yellow_shirt/back/base.png" title="Base" data-parameters='{"left": 317, "top": 329, "colorLinkGroup": "shirt", "price": 20}' />
+		    			<img src="images/yellow_shirt/back/body.png" title="Hightlights" data-parameters='{"left": 333, "top": 119}' />
+				  		<img src="images/yellow_shirt/back/shadows.png" title="Shadow" data-parameters='{"left": 318, "top": 329}' />
+					</div>
+				</div>
+		  		<div class="fpd-design">
+		  			<div class="fpd-category" title="Swirls">
+			  			<img src="images/designs/swirl.png" title="Swirl" data-parameters='{"zChangeable": true, "left": 215, "top": 200, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "price": 10, "boundingBox": "Base", "autoCenter": true}' />
+				  		<img src="images/designs/swirl2.png" title="Swirl 2" data-parameters='{"left": 215, "top": 200, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "price": 5, "boundingBox": "Base", "autoCenter": true}' />
+				  		<img src="images/designs/swirl3.png" title="Swirl 3" data-parameters='{"left": 215, "top": 200, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "autoCenter": true}' />
+				  		<img src="images/designs/heart_blur.png" title="Heart Blur" data-parameters='{"left": 215, "top": 200, "colors": "#bf0200", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "price": 5, "boundingBox": "Base", "autoCenter": true}' />
+				  		<img src="images/designs/converse.png" title="Converse" data-parameters='{"left": 215, "top": 200, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "autoCenter": true}' />
+				  		<img src="images/designs/crown.png" title="Crown" data-parameters='{"left": 215, "top": 200, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "autoCenter": true}' />
+				  		<img src="images/designs/men_women.png" title="Men hits Women" data-parameters='{"left": 215, "top": 200, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "boundingBox": "Base", "autoCenter": true}' />
+		  			</div>
+		  			<div class="fpd-category" title="Retro">
+			  			<img src="images/designs/retro_1.png" title="Retro One" data-parameters='{"left": 210, "top": 200, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "scale": 0.25, "price": 7, "boundingBox": "Base", "autoCenter": true}' />
+				  		<img src="images/designs/retro_2.png" title="Retro Two" data-parameters='{"left": 193, "top": 180, "colors": "#ffffff", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "scale": 0.46, "boundingBox": "Base", "autoCenter": true}' />
+				  		<img src="images/designs/retro_3.png" title="Retro Three" data-parameters='{"left": 240, "top": 200, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "scale": 0.25, "price": 8, "boundingBox": "Base", "autoCenter": true}' />
+				  		<img src="images/designs/heart_circle.png" title="Heart Circle" data-parameters='{"left": 240, "top": 200, "colors": "#007D41", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "scale": 0.4, "boundingBox": "Base", "autoCenter": true}' />
+				  		<img src="images/designs/swirl.png" title="Swirl" data-parameters='{"left": 215, "top": 200, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "price": 10, "boundingBox": "Base", "autoCenter": true}' />
+				  		<img src="images/designs/swirl2.png" title="Swirl 2" data-parameters='{"left": 215, "top": 200, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "price": 5, "boundingBox": "Base", "autoCenter": true}' />
+				  		<img src="images/designs/swirl3.png" title="Swirl 3" data-parameters='{"left": 215, "top": 200, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true}' />
+				  	</div>
+		  		</div>
+		  	</div>
+
+		  	<br /><br />
+		  	<div class="fpd-right">
+			  	<span class="price badge badge-inverse"><span id="thsirt-price"></span> $</span>
+		  	</div>
+		  	<div id="my-variations"></div>
+
+
+    	</div>
+    </body>
+</html>

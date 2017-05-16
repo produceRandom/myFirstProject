@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>菜鸟教程(runoob.com)</title> 
+	  <link rel="stylesheet" href="bootstrap.min.css" />
+      <script type="text/javascript">
+		
+         var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+			
+         db.transaction(function (tx) {
+            tx.executeSql('UPDATE LOGS SET log=\'html5\' WHERE id=1');
+            tx.executeSql('UPDATE LOGS SET log=\'css3\' WHERE id=2');
+            tx.executeSql('SELECT * FROM LOGS', [], function (tx, results) {
+            	var a = []
+            	for (var i = 0; i < results.rows.length; i++){
+            		
+			        a.push(results.rows.item(i))
+			    }
+            	var b = JSON.stringify(a)
+            	
+				var tab = document.createElement("table")
+				tab.classList.add("table")
+				tab.classList.add("table-bordered")
+				var thead = document.createElement("thead")
+				var tr1 = document.createElement("tr")
+				for(var i in a[0]){
+						var th = document.createElement("th")
+						th.innerHTML = i 
+						tr1.appendChild(th)
+					}
+				thead.appendChild(tr1)
+				var tbody = document.createElement("tbody")
+				a.forEach(function(item,index){
+					var tr2 =document.createElement("tr")
+					for(var i in item){
+						var td = document.createElement("td")
+						td.innerHTML = item[i]
+						tr2.appendChild(td)
+					}
+					tbody.appendChild(tr2)
+				})
+				
+				tab.appendChild(thead)
+				tab.appendChild(tbody)
+				document.body.appendChild(tab)
+            });
+         });
+
+
+			
+      </script>
+		
+   </head>
+	
+   <body>
+
+   </body>
+	
+</html>

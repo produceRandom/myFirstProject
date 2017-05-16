@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="bootstrap.min.css" />
+	</head>
+	<style>
+
+		.tab{/*-webkit-transform:scale(1,1);animation:show 0.5s;-webkit-animation:show 1s;*/background:radial-gradient(rgba(97,255,236,0.2),rgba(150,255,255,0.2));width: 80vw;margin: 20px auto;box-shadow:  5px 5px 10px rgba(0,0,0,0.5);font-family: "微软雅黑";}
+		/*@keyframes show{
+			from{-webkit-transform:scale(0,0)}
+			to{-webkit-transform:scale(1,1)}
+		}
+		@-webkit-keyframes show{
+			0%{-webkit-transform:scale(0,0) rotateZ(0deg) perspective(600px)}
+			100%{-webkit-transform:scale(1,1) rotateZ(360deg) perspective(600px)}
+		}*/
+		.tab thead{background: linear-gradient(rgba(150,195,63,0.8),rgba(125,195,63,1));line-height: 50px;color: white;}
+		.tab tbody{line-height: 40px;background: radial-gradient(rgba(222,243,204,1),rgba(222,243,204,0.8));text-shadow: 1px 3px 3px rgba(180,180,180,0.5)}
+		.tab th,td{border: 1px solid rgba(250,250,250,1);text-align: center;}
+		.info{text-align: center;}
+		.update{margin-left: 10vw;}
+		.m-r{margin-right: 10vw;}
+		.dotting {
+		    display: inline-block; min-width: 2px; min-height: 2px;
+		    box-shadow: none; 
+		    -webkit-animation: dot 0.5s infinite step-start both;
+		    animation: dot 4s infinite step-start both;
+		}
+		.dotting:before { content: '...'; } /* IE8 */
+		.dotting::before { content: ''; }
+		
+		@-webkit-keyframes dot {
+		    25% { box-shadow: none; }
+		    50% { box-shadow: 2px 0 currentColor; }
+		    75% { box-shadow: 2px 0 currentColor, 6px 0 currentColor; }
+		}
+		@keyframes dot {
+		    25% { box-shadow: none; }
+		    50% { box-shadow: 2px 0 currentColor; }
+		    75% { box-shadow: 2px 0 currentColor, 6px 0 currentColor; }
+		}
+	</style>
+	<body>
+		<table class="tab" cellpadding="0" cellspacing="0">
+			<thead>
+				<tr>
+					<th>省份</th>
+					<th>订单号</th>
+					<th>日期</th>
+					<th>金额</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+		<button class="btn btn-primary update">更新</button>
+		<button class="btn btn-primary pull-right m-r" data-toggle="modal" data-target="#Modal">增加</button>
+		<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							添加记录
+						</h4>
+					</div>
+					<div class="modal-body">
+						<form class="bs-example bs-example-form" role="form">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button type="button" class="btn btn-default dropdown-toggle">
+												省份
+											</button>
+										</div><!-- /btn-group -->
+										<input type="text" class="form-control" name="province">
+									</div><!-- /input-group -->
+								</div><!-- /.col-lg-6 --><br>
+								<div class="col-lg-6">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button type="button" class="btn btn-default dropdown-toggle">
+												日期
+											</button>
+										</div><!-- /btn-group -->
+										<input type="date" class="form-control" name="date">
+									</div><!-- /input-group -->
+								</div><!-- /.col-lg-6 --><br>
+								<div class="col-lg-6">
+									<div class="input-group">
+										<div class="input-group-btn">
+											<button type="button" class="btn btn-default dropdown-toggle" >
+												金额
+											</button>
+										</div><!-- /btn-group -->
+										<input type="text" class="form-control" name="money">
+									</div><!-- /input-group -->
+								</div><!-- /.col-lg-6 --><br>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default close_modal" data-dismiss="modal">关闭
+						</button>
+						<button type="button" class="btn btn-primary  add">
+							添加
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+	<script type="text/javascript" src="jquery.min.js" ></script>
+	<script type="text/javascript" src="bootstrap.min.js" ></script>
+	<script>
+		$(".update").click(function(){
+			$("tbody").html("<tr class=\"info\"><td></td><td></td><td></td><td></td><td></td></tr>")
+			$('tbody').ready(function(){
+				$("tbody tr td:first").html("请稍后<span class='dotting'></span>")
+			})
+			var info = new XMLHttpRequest()
+			info.onreadystatechange = function(){
+				if (info.readyState == 4 && info.status == 200) {
+					var res = info.responseText
+					res = JSON.parse(res)
+					for(var i=0;i<res.length-1;i++){
+						var cloneElement = $(".info:last").clone()
+						$(".info:last").after(cloneElement)
+					}
+					res.forEach(function(item,index){
+						$(".info:eq(" + index +")").children("td:eq(0)").text(item.province)
+						$(".info:eq(" + index +")").children("td:eq(1)").text(item.Id)
+						$(".info:eq(" + index +")").children("td:eq(2)").text(item.date)
+						$(".info:eq(" + index +")").children("td:eq(3)").text(item.money)
+						$(".info:eq(" + index +")").children("td:eq(4)").html('<a href="#" onclick="del(this)">删除</a>')
+					})
+				}
+			}
+			info.open("get","http://localhost",true)
+			info.send()
+		})
+		$(".add").click(function(){
+			var Date = document.getElementsByName("date")[0].value
+			var province = document.getElementsByName("province")[0].value
+			var money = document.getElementsByName("money")[0].value
+			$.ajax({
+			    type: "POST",
+			    url: "http://localhost/add.php",
+			    data: {province:province,date:Date,money:money},
+			    success: function(msg){
+			        console.log( "Data Saved: " + msg );
+			        $(".close_modal").click()
+			    }
+			});
+		})
+		function del(el){
+			var id = $(el).parent().parent().children("td:eq(1)").text()
+			$.ajax({
+			    type: "POST",
+			    url: "http://localhost/delete.php",
+			    data: {id:id},
+			    success: function(msg){
+			        console.log(  msg );
+			        $(".update").click()
+			    }
+			});
+		}
+	</script>
+	</body>
+</html>

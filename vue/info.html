@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+
+		.tab{-webkit-transform:scale(1,1);animation:show 0.5s;-webkit-animation:show 1s;background:radial-gradient(rgba(97,255,236,0.2),rgba(150,255,255,0.2));width: 80vw;margin: 20px auto;box-shadow:  5px 5px 10px rgba(0,0,0,0.5);font-family: "微软雅黑";}
+		@keyframes show{
+			from{-webkit-transform:scale(0,0)}
+			to{-webkit-transform:scale(1,1)}
+		}
+		@-webkit-keyframes show{
+			0%{-webkit-transform:scale(0,0) rotateZ(0deg) perspective(600px)}
+			100%{-webkit-transform:scale(1,1) rotateZ(360deg) perspective(600px)}
+		}
+		.tab thead{background: linear-gradient(#84FF8C,#F6FF11);line-height: 50px;}
+		.tab tbody{line-height: 40px;background: radial-gradient(rgba(97,255,236,0.2),rgba(150,255,255,0.2));text-shadow: 1px 3px 3px rgba(180,180,180,0.5)}
+		.tab th,td{border: 1px solid rgba(250,250,250,1);}
+		.info{text-align: center;}
+
+	</style>
+	<body>
+		<table class="tab" cellpadding="0" cellspacing="0">
+			<thead>
+				<tr>
+					<th>省份</th>
+					<th>订单号</th>
+					<th>日期</th>
+					<th>金额</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="info">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+
+	<script src="jquery.min.js"></script>	
+	<script>
+		window.onload = function(){
+			var info = new XMLHttpRequest()
+			info.onreadystatechange = function(){
+				if (info.readyState == 4 && info.status == 200) {
+					var res = info.responseText
+					res = JSON.parse(res).info
+					for(var i=0;i<res.length-1;i++){
+						var cloneElement = $(".info:last").clone()
+						$(".info:last").after(cloneElement)
+					}
+					res.forEach(function(item,index){
+						$(".info:eq(" + index +")").children("td:eq(0)").text(item.province)
+						$(".info:eq(" + index +")").children("td:eq(1)").text(item.order_id)
+						$(".info:eq(" + index +")").children("td:eq(2)").text(item.date_time)
+						$(".info:eq(" + index +")").children("td:eq(3)").text(item.money)
+					})
+				}
+			}
+			info.open("get","data/info.json",true)
+			info.send()
+		}
+		
+	</script>
+	</body>
+</html>

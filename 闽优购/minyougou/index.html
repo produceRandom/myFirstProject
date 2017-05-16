@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="js/angular.js"></script>
+</head>
+<style>
+	*{
+		font-size: 20px;
+	}
+	.header{
+		background: url(img/index/top.jpg) no-repeat;
+		background-size: cover;
+		height:4.083rem;
+	}
+</style>
+<body  ng-app="" style="margin: 0;">
+	<header class="header">
+		<div ng-include="'header.html'"></div>
+		
+	</header>
+	
+	
+	
+	
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    //html’s font follow scren size change
+    var width=$(window).width()
+    var size=width/10
+    size = size +"px"
+    $("html").css("font-size",size)
+    $(window).resize(function() {
+        var width=$(window).width()
+        var size=width/10
+        size = size +"px"
+        $("html").css("font-size",size)
+    });
+
+</script>
+</html>

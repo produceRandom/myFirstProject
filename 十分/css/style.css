@@ -1,0 +1,47 @@
+body,div,p.img,p,ul,li{
+	margin: 0px;
+	padding: 0px;
+}
+.nav{
+	display: inline-block;
+	text-align: center;
+	width: 40%;
+	margin-left:0px ;
+	
+}
+ul{
+	list-style: none;
+	display: inline-block;
+}	
+ul li{
+	float: right;
+	text-align: center;
+    width: 75px;
+    padding:3px 0px;\
+    display: inline-block;
+    
+}
+a{
+	text-decoration: none;
+	color: blue;
+	font-size: 16px;
+	
+}
+a:hover{
+	color: #FFFFFF;
+	background: #0651f9;
+}
+.banner{
+
+	margin-top:30px;	
+}
+#div1{
+	width: 100%;
+	background: #eefbff;
+    	
+}
+.text1{
+    width: 1000px;
+	margin: 0 auto;
+	
+}

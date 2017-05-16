@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,height=device-height" initial-scale=1.0 minimum-scale=1.0 user-scalable=no  />
+		<title></title>
+		
+	</head>
+	<style>
+		body,header{
+			margin: 0;
+			padding: 0;
+		}
+		h1,p{
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    margin: 4vmin;
+		}
+		
+		a{
+			text-decoration: none;
+			background:#8f76aa;
+			color: white;
+			display: flex;
+			border-radius: 10px;
+			line-height: 30px;
+		    justify-content: center;
+		    align-items: center;
+		    width: 100px;
+		    margin: 0 auto;
+		}
+		a:link,a:hover{
+			filter:brightness(120%);
+			-webkit-filter: brightness(120%); /* Chrome, Safari, Opera */
+		}
+		a:active,a:visited{
+			filter:brightness(100%);
+			-webkit-filter: brightness(100%); /* Chrome, Safari, Opera */
+		}
+		p{
+			font-size: 20px;
+		}
+		.grid-container{
+			width: 100vmin;
+			height: 100vmin;
+			margin: 0 auto;
+			background: antiquewhite;
+			border-radius: 4vmin;
+			padding: 4vmin;
+			box-sizing: border-box;
+			position: relative;
+		}
+		.grid-cell{
+			width: 20vmin;
+			height: 20vmin;
+			border-radius: 10px;
+			background: wheat;
+			position: absolute
+		}
+		.number-cell{
+			position: absolute;
+			border-radius: 6px;
+			font-size: 8vmin;
+			text-align: center;
+			line-height: 20vmin;
+
+		}
+	</style>
+	<body ontouchmove="event.preventDefault()">
+		<header>
+			<h1 style="text-align: center;">2048</h1>
+			<a href="javascript:newGame();">新游戏</a>
+			<p>score： <span>0</span>　｜　最高分：<label>0</label></p>
+		</header>
+		<div class="grid-container">
+			<div class="grid-cell"></div>
+		</div>
+	</body>
+	<script src="jquery.min.js"></script>
+
+	<script src="main.js"></script>
+	<script src="support.js"></script>
+
+	<script src="animate.js"></script>
+</html>

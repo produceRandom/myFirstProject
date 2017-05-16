@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>团购</title>
+		<link rel="stylesheet" href="css/attribute.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/angular.js" ></script>		
+	</head>
+	<style>
+		img{
+			width: 100%
+		}
+		.p-lr-185{
+			padding-left:0.963rem;
+			padding-right: 0.963rem;
+		}
+		.p-lr-170{
+			padding-left:0.885rem;
+			padding-right: 0.885rem;
+		}
+		.hot-team-bg{
+			background: url(img/team_buying/热门团购背景.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		.boutique-team-bg{
+			background: url(img/team_buying/精品团购的背景.jpg) no-repeat;
+			background-size: 100% 100%;
+		}
+		.tomorrow-team-bg{
+			background: url(img/team_buying/明日推荐的背景.jpg) no-repeat;
+			background-size: 100% 100%
+		}
+		.team-title{
+			font-size: 50px;
+			height: 1rem;
+			position: relative;
+		}
+		.team-title-font{
+			position: absolute;bottom: 0;font-size: 48px;margin-left: -100px;
+		}
+		.yellow{
+			color: #e6b04a;
+		}
+		.bg-yellow{
+			background: #e6b04a;
+		}
+		.text-ov-hi{
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+		.m-tb-15{
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	</style>
+	<body ng-app="team_buying" ng-controller="team_buying_con">
+		<div  ng-include="'header_1.html'"></div>
+
+		<div id="main"  >
+			<div class="w100">
+				<div class="p-t-50 p-lr-185 m-b-80">
+					<img src="img/team_buying/2.jpg"/>
+				</div>
+				<div class="p-lr-170 f-s-0">
+					<div class="col-3-1">
+						<img src="img/team_buying/画板 1.png"/>
+					</div>
+					<div class="col-3-1">
+						<img src="img/team_buying/画板 2.png"/>
+					</div>
+					<div class="col-3-1">
+						<img src="img/team_buying/画板 3.png"/>
+					</div>
+				</div>
+			</div>
+<!--热门团购-->
+			<div class="w100 hot-team-bg">
+				<div class="w100 text-center">
+					<p class="team-title white"><span class="team-title-font">热门团购</span></p>
+				</div>
+				<div class="p-lr-170">
+					<div class="f-s-0" style="padding-top: 0.658rem;padding-bottom:0.755rem">
+						<!--团购商品-->
+						<div class="col-5-1 text-center white m-tb-15 hot_team_buying" ng-repeat="x in names | filter:{'type':'hot'}">
+							<img src="{{x.img_url}}"/>
+							<p class="f-s-16 l-h-50 text-ov-hi name">{{x.name}}</p>
+							<p class="yellow le-s-5">￥<span class="f-s-32 price" style="letter-spacing: 3px;">{{x.price}}</span></p>
+							<p class="l-h-60 le-s-5 bg-yellow">剩2人</p>
+						</div> 
+						<!--团购商品结束-->
+					</div>
+				</div>
+
+			</div>
+<!--热门团购结束-->
+<!--精品团购-->
+			<div class="w100 boutique-team-bg">
+				<div class="w100 text-center">
+					<p class="team-title white" style="height:0.833rem"><span class="team-title-font">精品团购</span></p>
+				</div>
+				<div class="p-lr-170">
+					<div class="f-s-0" style="padding-top: 0.658rem;padding-bottom:0.755rem">
+						<!--团购商品-->
+						<div class="col-5-1 text-center white m-tb-15 boutique_team_buying" ng-repeat="x in names | filter:{'type':'boutique'}">
+							<img src="{{x.img_url}}"/>
+							<p class="f-s-16 l-h-50 text-ov-hi name">{{x.name}}</p>
+							<p class="yellow le-s-5">￥<span class="f-s-32 price" style="letter-spacing: 3px;">{{x.price}}</span></p>
+							<p class="l-h-60 le-s-5 bg-yellow">剩2人</p>
+						</div> 
+						<!--团购商品结束-->
+					</div>
+				</div>			
+			</div>
+<!--精品团购结束-->
+<!--明日团购推荐-->
+			<div class="w100 tomorrow-team-bg">
+				<div class="w100 text-center">
+					<p class="team-title white" style="height:0.833rem"><span class="team-title-font">明日团购</span></p>
+				</div>
+				<div class="p-lr-170">
+					<div class="f-s-0" style="padding-top: 0.658rem;padding-bottom:0.755rem">
+						<!--团购商品-->
+						<div class="col-5-1 text-center white m-tb-15 tomorrow_team_buying" ng-repeat="x in names | filter:{'type':'tomorrow'}">
+							<img class="m-b-20" src="{{x.img_url}}"/>
+
+							<p class="l-h-60 le-s-5 bg-yellow">　</p>
+						</div> 
+						<!--团购商品结束-->
+					</div>
+				</div>
+				<div class="p-lr-170">
+					<div class="f-s-0" style="padding-top: 0.658rem;padding-bottom: 1rem;">
+						<div class="col-3-1">
+							<img src="img/team_buying/产品/500x300/明溪宝石.jpg" />
+						</div>
+						<div class="col-3-1">
+							<img src="img/team_buying/产品/500x300/海棠砚.jpg" />
+						</div>
+						<div class="col-3-1">
+							<img src="img/team_buying/产品/500x300/龙池砚.jpg" />
+						</div>
+					</div>
+				</div>				
+			</div>	
+<!--明日团购结束-->
+		</div><!--main结束-->
+	</body>
+
+<!--	<script type="text/javascript" src="js/commodity.js" ></script>-->
+	
+	<script>
+	    //html’s font follow scren size change
+	    var width=$(window).width();
+	    var size=width/10;
+	    size = size +"px";
+	    $("html").css("font-size",size);
+	    $(window).resize(function() {
+	        var width=$(window).width();
+	        var size=width/10;
+	        size = size +"px";
+	        $("html").css("font-size",size);
+	    });
+//热门商品
+	$(function(){
+//		addCommodity(".hot_team_buying",hot_team_buying)
+//		addCommodity(".boutique_team_buying",boutique_team_buying)
+//		addCommodity(".tomorrow_team_buying",tomorrow_team_buying)
+	})
+	</script>
+	<script>
+//		var xmlhttp = new XMLHttpRequest();
+//		xmlhttp.onreadystatechange = function(){
+//		    if (this.readyState == 4 && this.status == 200) {
+//		        myObj = JSON.parse(this.responseText);  
+//
+//		    }
+//		};
+//		xmlhttp.open("GET", "./js/commodity.json", true);
+//		xmlhttp.send();
+//		var include = angular.module("include_ctrl",[])
+//		include.controller("include_ctrl",function($scope){
+//			
+//		});
+
+		var team_buying = angular.module("team_buying",[])
+		team_buying.controller("team_buying_con",function($scope,$http){
+			$http({
+				method:'get',
+				url:'./js/commodity.txt'
+			}).then(function successCallback(response){
+				
+				$scope.names = response.data.team_buying
+				
+				
+			},function errorCallback(response){
+				alert(response.data)
+			})
+		})
+	</script>
+</html>

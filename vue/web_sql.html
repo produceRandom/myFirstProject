@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>菜鸟教程(runoob.com)</title> 
+      <script type="text/javascript">
+		
+         var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+         var msg;
+			
+         db.transaction(function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "1111")');
+            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "2222")');
+         });
+
+
+			
+      </script>
+		
+   </head>
+	
+   <body>
+
+   </body>
+	
+</html>

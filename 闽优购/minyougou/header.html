@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.nav{
+			background: rgba(0,0,0,0.5);
+		}
+		*{
+			font-s
+		}
+		ul li{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			display: inline-block;
+		}
+	</style>
+	<body>
+		<nav class="nav">
+			<ul>
+				<li>全部商品分类</li>
+				<li>DIY个性化定制</li>
+				<li>城市特色</li>
+				<li>“图片”</li>
+				<li>团购</li>
+				<li>秒杀</li>
+				<li>拍卖抢购</li>
+				<li>注册/登录</li>
+			</ul>
+		</nav>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script>
+	    //html’s font follow scren size change
+	    var width=$(window).width()
+	    var size=width/10
+	    size = size +"px"
+	    $("html").css("font-size",size)
+	    $(window).resize(function() {
+	        var width=$(window).width()
+	        var size=width/10
+	        size = size +"px"
+	        $("html").css("font-size",size)
+	    });
+	
+	</script>
+</html>

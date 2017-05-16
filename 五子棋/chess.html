@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		canvas{
+			margin:auto;
+			position: absolute;
+			left: 0;right: 0;top: 0;bottom: 0;
+			box-shadow: -2px -2px 5px #efefef, 5px 5px 5px #b9b9b9; 
+		}
+	</style>
+	<body>
+		<canvas id="chess" width="450px" height="450px"></canvas>
+		
+		<script>
+			var over = false
+			var chess = document.getElementById("chess")
+			var context = chess.getContext("2d")
+			context.strokeStyle = "#C667E4"
+			var logo = new Image()
+			logo.src = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493713024&di=ae282c36b64397be328c23ec09ff88dc&imgtype=jpg&er=1&src=http%3A%2F%2Fimg9.3lian.com%2Fc1%2Fvec2013%2F34%2F61.jpg"
+			logo.onload = function(){
+				context.drawImage(logo, 0, 0, 450, 450);
+				drawChessBoard();
+
+			}
+			function drawChessBoard(){
+				for (var i=0 ; i<15; i++) {
+					var x = i*30 + 15
+					context.moveTo(x,15)
+					context.lineTo(x,435)
+					context.moveTo(15,x)
+					context.lineTo(435,x)
+					context.stroke()
+				}
+			}
+
+			function onestep(i,j,me){
+				context.beginPath()
+				context.arc(i*30 + 15, j*30 + 15, 13, 0, 2 * Math.PI);
+				context.closePath()
+				var gradient = context.createRadialGradient(i*30 + 15, j*30 + 15, 13, i*30 + 15, j*30 + 15, 0)
+				
+				if (me) {
+					gradient.addColorStop(0,"#0a0a0a")
+					gradient.addColorStop(1,"#636766")
+				} else{
+					gradient.addColorStop(0,"#d1d1d1")
+					gradient.addColorStop(1,"#f9f9f9")					
+				}
+				context.fillStyle = gradient
+				context.fill()
+			}
+			var me = true
+			var chessBoard = []
+			for (i=0;i<15;i++) {
+				chessBoard[i] = []
+				for (j=0;j<15;j++) {
+					chessBoard[i][j] = 0
+				}
+			}
+			//赢法数组
+			var wins = []
+			for (i=0;i<15;i++) {
+				wins[i] = []
+				for (j=0;j<15;j++) {
+					wins[i][j] = []
+				}
+				
+			}
+			var count = 0
+			//横线赢法
+			for (i=0;i<15;i++) {
+				for (j=0;j<11;j++) {
+					for (k=0;k<5;k++) {
+						wins[i][j+k][count] = true
+					}
+					count++
+				}
+				
+			}
+			//竖线赢法
+			for (i=0;i<15;i++) {
+				for (j=0;j<11;j++) {
+					for (k=0;k<5;k++) {
+						wins[j+k][i][count] = true
+					}
+					count++
+				}
+				
+			}
+			//斜线赢法
+			for (i=0;i<11;i++) {
+				for (j=0;j<11;j++) {
+					for (k=0;k<5;k++) {
+						wins[i+k][j+k][count] = true
+					}
+					count++
+				}
+				
+			}			
+			//反斜线赢法
+			for (i=0;i<11;i++) {
+				for (j=14;j>3;j--) {
+					for (k=0;k<5;k++) {
+						wins[i+k][j-k][count] = true
+					}
+					count++
+				}
+				
+			}			
+			//赢法的统计数组
+			var blackWin = []
+			var whiteWin = []
+			for (i=0 ; i<count;i++) {
+				blackWin[i] = 0;
+				whiteWin[i] = 0
+			}
+			chess.onclick = function(e){
+				if (over) {
+					return
+				} 
+				var x = e.offsetX;
+				var y = e.offsetY;
+				var i = Math.floor(x/30)
+				var j = Math.floor(y/30)
+				if (chessBoard[i][j] == 0) {
+					onestep(i,j,me);
+					if (me) {
+						chessBoard[i][j] = 1
+						for (k=0;k<count;k++) {
+							if (wins[i][j][k]) {
+								blackWin[k]++
+								whiteWin[k] = 6
+								if (blackWin[k] == 5) {
+									alert("黑方赢了");
+									over = true
+								} 
+							}
+						}
+					} else{
+						chessBoard[i][j] = 2
+						for (k=0;k<count;k++) {
+							if (wins[i][j][k]) {
+								blackWin[k] = 6
+								whiteWin[k]++
+								if (whiteWin[k] == 5) {
+									alert("白方赢了");
+									over = true
+								} 
+							}
+						}
+					}
+					me = !me
+					computerAI()
+
+				} 
+
+			}
+//计算机下棋
+
+var computerAI = function (){
+    var myScore = [];
+    var computerScore = [];
+    var max = 0;
+    var u = 0, v = 0;
+    for(var i = 0; i < 15; i++){
+        myScore[i] = [];
+        computerScore[i] = [];
+        for(var j = 0; j < 15; j++){
+            myScore[i][j] = 0;
+            computerScore[i][j] = 0;
+        }
+    }
+    for(var i = 0; i < 15; i++){
+        for(var j = 0; j < 15; j++){
+            if(chessBoard[i][j] == 0){
+                for(var k = 0; k < count; k++){
+                    if(wins[i][j][k]){
+                        if(blackWin[k] == 1){
+                            myScore[i][j] += 200;
+                        }else if(blackWin[k] == 2){
+                            myScore[i][j] += 400;
+                        }else if(blackWin[k] == 3){
+                            myScore[i][j] += 2000;
+                        }else if(blackWin[k] == 4){
+                            myScore[i][j] += 10000;
+                        }
+                        
+                        if(whiteWin[k] == 1){
+                            computerScore[i][j] += 220;
+                        }else if(whiteWin[k] == 2){
+                            computerScore[i][j] += 420;
+                        }else if(whiteWin[k] == 3){
+                            computerScore[i][j] += 2100;
+                        }else if(whiteWin[k] == 4){
+                            computerScore[i][j] += 20000;
+                        }                        
+                    }
+                }
+                
+                if(myScore[i][j] > max){
+                    max  = myScore[i][j];
+                    u = i;
+                    v = j;
+                }else if(myScore[i][j] == max){
+                    if(computerScore[i][j] > computerScore[u][v]){
+                        u = i;
+                        v = j;    
+                    }
+                }
+                
+                if(computerScore[i][j] > max){
+                    max  = computerScore[i][j];
+                    u = i;
+                    v = j;
+                }else if(computerScore[i][j] == max){
+                    if(myScore[i][j] > myScore[u][v]){
+                        u = i;
+                        v = j;    
+                    }
+                }
+                
+            }
+        }
+    }
+    onestep(u,v,false);
+    chessBoard[u][v] = 2;
+    for(var k = 0; k < count; k++){
+        if(wins[u][v][k]){
+            whiteWin[k]++;
+            blackWin[k] = 6;//这个位置对方不可能赢了
+            if(whiteWin[k] == 5){
+                window.alert('计算机赢了');
+                over = true;
+            }
+        }
+    }
+    if(!over){
+        me = !me;
+    }
+}
+		</script>
+	</body>
+	
+</html>

@@ -1,0 +1,146 @@
+{
+	"team_buying":
+	[
+	    {
+	        "name": "Dickies男式针织套头衬衫",
+	        "price": "459",
+	        "people_left": "剩2人",
+	        "img_url": "./img/team_buying/产品/2.jpg",
+	        "type": "hot"
+	    },
+	    {
+	        "name": "Just Cavalli女款黑色短靴",
+	        "price": "1999",
+	        "people_left": "剩2人",
+	        "img_url": "./img/team_buying/产品/1.jpg",
+	        "type": "hot"
+	    },
+	    {
+	        "name": "ochirly女式长袖套头毛衣",
+	        "price": "296",
+	        "people_left": "剩2人",
+	        "img_url": "./img/team_buying/产品/1(2).jpg",
+	        "type": "hot"
+	    },
+	    {
+	        "name": "雅鹿 女式 羽绒服",
+	        "price": "289",
+	        "people_left": "剩2人",
+	        "img_url": "./img/team_buying/产品/1(3).jpg",
+	        "type": "hot"
+	    },
+	    {
+	        "name": "意大利及进口男式黑色皮带",
+	        "price": "2140",
+	        "people_left": "剩2人",
+	        "img_url": "./img/team_buying/产品/1(4).jpg",
+	        "type": "hot"
+	    },
+	    {
+	        "name": "川崎 运动背包 羽毛球包 电脑背包",
+	        "price": "299",
+	        "people_left": "剩2人",
+	        "img_url": "./img/team_buying/产品/1(5).jpg",
+	        "type": "hot"
+	    },
+	    {
+	        "name": "台湾进口 女子拉力绳",
+	        "price": "159",
+	        "people_left": "剩2人",
+	        "img_url": "./img/team_buying/产品/1(6).jpg",
+	        "type": "hot"
+	    },
+	    {
+	        "name": "探路者 滑雪镜",
+	        "price": "259",
+	        "people_left": "剩2人",
+	        "img_url": "./img/team_buying/产品/1(7).jpg",
+	        "type": "hot"
+	    },
+	    {
+	        "name": "维氏 多功能军刀",
+	        "price": "192",
+	        "people_left": "剩2人",
+	        "img_url": "./img/team_buying/产品/1(8).jpg",
+	        "type": "hot"
+	    },
+	    {
+	        "name": "阿迪达斯进口旋转俯卧撑架",
+	        "price": "592",
+	        "people_left": "剩2人",
+	        "img_url": "./img/team_buying/产品/1(9).jpg",
+	        "type":"hot"
+	        
+	    },
+		{
+		    "name": "飞利浦 去球器",
+		    "price": "459",
+		    "people_left": "剩2人",
+		    "img_url": "./img/team_buying/产品/294x392.jpg",
+		    "type": "boutique"
+		},
+		{
+			"name":"飞利浦钻石亮白型声波牙刷",
+		    "price": "1999",
+		    "people_left": "剩2人",
+		    "img_url": "./img/team_buying/产品/_0000_71ZmX8-q0ZL._SL1500_.jpg",
+		    "type": "boutique"
+		},
+		{
+		    "name": "钢盾 5合1多功能电工尖嘴钻",
+		    "price": "296",
+		    "people_left": "剩2人",
+		    "img_url": "./img/team_buying/产品/_0000_610p89aEkYL._SL1000_.jpg",
+		    "type": "boutique"
+		},
+		{
+		    "name": "泰国原装进口天然乳胶枕头",
+		    "price": "289",
+		    "people_left": "剩2人",
+		    "img_url": "./img/team_buying/产品/_0000_51U909ng9QL._SL800_.jpg",
+		    "type": "boutique"
+		},
+		{
+		    "name": "雅漾 舒护泉活水喷雾",
+		    "price": "2140",
+		    "people_left": "剩2人",
+		    "img_url": "./img/team_buying/产品/1(10).jpg",
+		    "type": "boutique"
+		},
+		{
+		    "name": "",
+		    "price": "459",
+		    "people_left": "",
+		    "img_url": "./img/team_buying/产品/1(11).jpg",
+		    "type": "tomorrow"
+		},
+		{
+		    "name": "",
+		    "price": "1999",
+		    "people_left": "",
+		    "img_url": "./img/team_buying/产品/2(2).jpg",
+		    "type": "tomorrow"
+		},
+		{
+		    "name": "",
+		    "price": "296",
+		    "people_left": "",
+		    "img_url": "./img/team_buying/产品/3.jpg",
+		    "type": "tomorrow"
+		},
+		{
+		    "name": "",
+		    "price": "289",
+		    "people_left": "",
+		    "img_url": "./img/team_buying/产品/4.jpg",
+		    "type": "tomorrow"
+		},
+		{
+		    "name": "",
+		    "price": "2140",
+		    "people_left": "",
+		    "img_url": "./img/team_buying/产品/5.jpg",
+		    "type": "tomorrow"
+		}	    
+	]
+}
