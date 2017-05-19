@@ -27,6 +27,7 @@
 			height: 60px;
 			border: 1px solid red;
 			margin-bottom: 20px;
+			vertical-align: top;
 		}
 		.left-litter-box:first-child{
 			margin-right: 20px;
@@ -43,15 +44,28 @@
 			margin-left:20px ;
 			border: 1px solid red;
 		}
+		ul{
+			list-style: none;
+		}
+		.a{
+
+			line-height: 20px;
+			font-size: 16px;
+		}
 	</style>
 	<body>
 
 		<div class="main-container">
 			<div class="center">
 				<div class="left-container">
-					<div class="left-litter1"></div>
-					<div class="left-litter2"></div>
-					<div class="left-big"></div>
+					<div class="left-litter-box">
+						<ul>
+							<li class="a">a</li>
+							<li class="a">a</li>
+						</ul>
+					</div>
+					<div class="left-litter-box"></div>
+					<div class="left-big-box"></div>
 				</div>
 				<div class="right-container"></div>
 			</div>
