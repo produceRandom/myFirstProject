@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>全部商品分类</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/attribute.css" />
+	</head>
+	<style>
+		.border{
+			border:1px solid #e7e7e7;
+			border-bottom: 0;
+		}
+		.m-t-10{
+			margin-top: 10px;
+		}
+		.m-b-10{
+			margin-bottom:calc(10rem / 192)
+		}
+		.text-ov-hi{
+			width: 1.4rem;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+		.side{
+			width: calc(322rem / 192)
+		}
+		.side img{
+			box-shadow:0 10px 10px -5px rgba(0,0,0,0.2);
+		}
+		.big-pic{			
+		}
+		.big-pic img{
+			position: absolute;
+			width: calc(866rem / 192);
+			left: 0;
+			right: 0;
+			margin: auto;
+			box-shadow:0 10px 30px -5px rgba(0,0,0,0.4);
+		}
+		.show{
+			animation: show 2s;
+			-webkit-transition: show 2s;
+		}
+		@keyframes show{
+			from{opacity: 0;}
+			to{opacity: 1;}
+		}
+		@-webkit-keyframes show{
+			from{opacity: 0;}
+			to{opacity: 1;}
+		}
+		.hide{
+			transition: all 2s;
+			-webkit-transition: all 2s;
+			opacity: 0;
+		}
+		.icon-big{
+			transform: scale(1.2,1.2);
+		}
+	</style>
+	<body>
+		<?php include "./header_choice.html" ?>
+		<div id="main">
+			<div class="w100">
+				<p class="f-s-40 l-h-200 text-center gray">全部商品分类</p>
+			</div>
+			<div class="p-lr-185">
+				<p class="f-s-32 gray">今日推荐</p>
+			</div>
+			<div class="p-t-50 p-lr-170 f-s-0">
+				<div class="col-5-1 today_recomment">
+					<img src="img/team_buying/产品/2.jpg" class="border"/>
+					<div class="bg-999 text-center white l-h-100">
+						<div class="ver-mid">
+							<p class="f-s-16 text-ov-hi name">Dickies男式针织套头衫</p>
+							<p class="f-s-16">¥<span class="price">459</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="p-lr-185 p-t-50 f-s-0 po-re">
+				<div class="side pull-left">
+					<img class="m-b-10" data-index="0" src="img/all_categories/322-120/2.jpg" />
+					<img class="m-b-10" data-index="1" src="img/all_categories/322-120/1.jpg" />
+					<img data-index="2" src="img/all_categories/322-120/3.jpg" />
+				</div>
+				<div class="big-pic">
+					<img src="img/all_categories/866-380/1 (2).png" class="show"/>
+					<img src="img/all_categories/866-380/1 (1).png" class="hide"/>
+					<img src="img/all_categories/866-380/1 (3).png" class="hide"/>
+					<img src="img/all_categories/866-380/01.jpg" class="hide"/>
+					<img src="img/all_categories/866-380/02.jpg" class="hide"/>
+					<img src="img/all_categories/866-380/03.jpg" class="hide"/>					
+				</div>
+				<div class="side pull-right">
+					<img class="m-b-10" data-index="3" src="img/all_categories/322-120/01.jpg" />
+					<img class="m-b-10" data-index="4" src="img/all_categories/322-120/02.jpg" />
+					<img data-index="5" src="img/all_categories/322-120/03.jpg" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="p-t-50 p-lr-185">
+				<div class="p-t-50">
+					<p class="f-s-32 gray pull-left">户外运动</p>
+					<p class="icon iconfont icon-angle-double-right pull-right f-s-32 gray icon-big"></p>
+					<div class="clearfix"></div>
+				</div>
+				<div class="p-t-50"></div>
+			</div>
+			</div>
+		</div>
+		<?php include "./footer.html" ?>
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+	<script type="text/javascript" src="js/commodity.js" ></script>
+	<script>
+		addCommodity(".today_recomment",hot_team_buying)
+	</script>
+	<script>
+		$(".side img").mouseover(function(){
+			var index = $(this).attr("data-index");
+			var pic = ".big-pic" + " " + "img:eq(" + index + ")";
+			$(".big-pic img").removeClass("show").addClass("hide") 
+			$(pic).removeClass("hide").addClass("show")
+		})
+	</script>
+</html>

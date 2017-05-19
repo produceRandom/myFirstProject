@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/attribute.css" />
+	<title></title>
+</head>
+<style>
+	.nav{
+		width:100%;
+		min-width: 1300px;
+		background: rgba(0,0,0,0.5);
+		line-height: 74px;
+		text-align: center;
+		position: fixed;
+		top: 0;
+		z-index: 5;
+	}
+	*{
+		font-size: 20px;
+	}
+	ul{
+		padding: 0;
+		width: 1300px;
+		margin: auto;
+	}
+	ul{
+		list-style: none;
+	}
+	li{
+		display: inline-block;
+		color: #fff;
+		text-align: justify;
+	}
+	.list-down{
+		background: rgba(0,0,0,0.3);
+		position: absolute;
+		visibility: hidden;
+		line-height: 60px;
+	}
+	.list-down  li{
+		margin: 0;
+		display: block;
+		font-size: 16px;
+	}
+	.list-down ul li:first-child{
+
+	}
+	.rgba-3{
+		background: rgba(0,0,0,0.3);
+	}
+	a{
+		text-decoration: none !important;
+		color: white;
+	}
+	a:link,a:visited{
+		text-decoration: none;
+		color: white;
+	}
+	a:hover,a:active{
+		text-decoration: none;
+		color: white;
+	}
+
+
+
+	.login_box{
+		z-index: 101;
+		position: relative;
+		background: white;
+	}
+</style>
+<body>
+<div class="modal" style="position: fixed;width: 100vw;height:100vh;background: rgba(0,0,0,0.5);display: none;z-index: 1">
+
+</div>
+<nav class="nav">
+	<ul>
+		<!--<li id="all-classify">
+             　<a href="all_categories.php">全部商品分类</a>
+            <i class="icon iconfont icon-caretleft" style="margin-left: 0.08rem;" id="openlist_down"></i>　
+
+            <div class="list-down">
+
+                <ul>
+                    <li>户外运动</li>
+                    <li>服饰鞋包</li>
+                    <li>珠宝表饰</li>
+                    <li>美妆个护</li>
+                    <li>工艺收藏</li>
+                    <li>玩具爱好</li>
+                    <li>数码产品</li>
+                    <li>家居园艺</li>
+                    <li>汽车商城</li>
+                </ul>
+
+            </div>
+        </li>-->
+		<a href="all_categories.php"><li>全部商品分类</li></a>
+		<a><li>DIY个性化定制</li></a>
+		<a href="city_feature.php"><li>城市特色</li></a>
+		<a href="index.php"><li><img src="img/icon/矢量智能对象.png" /></li></a>
+		<a href="team_buying.php"><li>团购</li></a>
+		<a href="skill.php"><li>秒杀</li></a>
+		<li><a href="auction.php">拍卖抢购</a></li>
+		<li><a href="register.php"><span class="white">注册</span></a>
+			<a class="login_show" style="text-decoration: none;color: white;cursor: pointer">/登录</a>
+		</li>
+	</ul>
+</nav>
+<div class="col-sm-5  login_box" style="height:400px;background: white;opacity: 1;position: fixed;left: 0;right: 0;top: 0;bottom: 0;margin: auto;display: none;line-height: 100%">
+	<div class="login-form" id="login-form" style="height: 350px">
+		<div class="col-sm-6 text-center">
+			<h2><span>账号登录</span></h2>
+			<ul>
+				<li class="active">
+					<input class="form-control" type="text" maxlength="40" placeholder="手机号/邮箱">
+				</li>
+				<li style="margin-top: 20px">
+					<input class="form-control" type="password" maxlength="18"  placeholder="密码">
+				</li>
+			</ul>
+			<div class="" style="display: inline-block">
+				<button class="btn btn-default">登录</button>&nbsp;&nbsp;&nbsp;&nbsp;
+				<button class="btn btn-close box_close">取消</button>
+				<br><br>不是会员？
+				<a class="text-important" href="/review.php">去注册</a>
+			</div>
+			<div class="login-r1c2">
+				<a class="text-dark"  href="#">忘记密码</a>
+			</div>
+			<div class="login-r2">
+				<button id="wechatlogin" style="background:none; border:0; margin: 0 30px">微信登录</button>
+				<button id="alipaylogin" style="background:none; border:0; margin: 0 30px">支付宝登录</button>
+			</div>
+		</div>
+		<div class="col-sm-6 text-center">
+			<div class="box_close" style="position: absolute;top:0;right:0;font-size: 20px;color: black;cursor: pointer">X</div>
+			<h2><span>二维码登录</span></h2>
+			<div class="col-sm-12" style="margin-bottom: 20px">
+				<img src="./_public_/images/erweima.png" style="width: 175px;height: 175px;background: gray"/>
+			</div>
+			<div class="">
+				<button  style="background:none; border:0; margin: 0 30px">微信登录</button>
+				<button  style="background:none; border:0; margin: 0 30px">支付宝登录</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    //html’s font follow scren size change
+    var width=$(window).width();
+    var size=width/10;
+    size = size +"px";
+    $("html").css("font-size",size);
+    $(window).resize(function() {
+        var width=$(window).width();
+        var size=width/10;
+        size = size +"px";
+        $("html").css("font-size",size);
+    });
+
+
+    $("#openlist_down").click(function(){
+        if ($(this).hasClass("icon-caretleft")) {
+            $(this).removeClass("icon-caretleft");
+            $(this).addClass("icon-caretdown");
+            var list_width = $("nav ul li:eq(0)").css("width");
+            $(".list-down").css("visibility","visible");
+            $(".list-down").css("width",list_width);
+            $("#all-classify").addClass("rgba-3");
+        }else{
+            $(this).removeClass("icon-caretdown");
+            $(this).addClass("icon-caretleft");
+            $(".list-down").css("visibility","hidden");
+            $("#all-classify").removeClass("rgba-3")
+        }
+    })
+    //    $('.user_login').click(function(){
+    //        $('.login-container').show()
+    //    });
+    //    $('.box_close').click(function(){
+    //        $('.login-container').hide()
+    //    })
+    $('.login_show').click(function () {
+        $('.modal').fadeIn(500)
+        $('.login_box').fadeIn(1000)
+    });
+    $('.box_close').click(function () {
+        $('.login_box').fadeOut(500)
+        $('.modal').fadeOut(1000)
+    })
+    //        $('.login_show').click(function () {
+    //            $('.login_box').show()
+    //        });
+    //        $('.box_close').click(function () {
+    //            $('.login_box').hide()
+    //        })
+    //
+
+
+
+</script>
+</html>

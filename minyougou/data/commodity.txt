@@ -1,0 +1,135 @@
+{
+	"commodity":
+	[
+	    {
+	        "name": "Dickies男式针织套头衬衫",
+	        "price": "459",
+	        "img_url": "./img/team_buying/产品/2.jpg",
+	        "type":"today"
+	    },
+	    {
+	        "name": "Just Cavalli女款黑色短靴",
+	        "price": "1999",
+	        "img_url": "./img/team_buying/产品/1.jpg",
+	        "type":"today"
+	    },
+	    {
+	        "name": "ochirly女式长袖套头毛衣",
+	        "price": "296",
+	        "img_url": "./img/team_buying/产品/1(2).jpg",
+	        "type":"today"
+	    },
+	    {
+	        "name": "雅鹿 女式 羽绒服",
+	        "price": "289",
+	        "img_url": "./img/team_buying/产品/1(3).jpg",
+	        "type":"today"
+	    },
+	    {
+	        "name": "意大利及进口男式黑色皮带",
+	        "price": "2140",
+	        "img_url": "./img/team_buying/产品/1(4).jpg",
+	        "type":"today"
+	    },
+	    {
+	        "name": "川崎 运动背包 羽毛球包 电脑背包",
+	        "price": "299",
+	        "img_url": "./img/team_buying/产品/1(5).jpg",
+	        "type":"today"
+	    },
+	    {
+	        "name": "台湾进口 女子拉力绳",
+	        "price": "159",
+	        "img_url": "./img/team_buying/产品/1(6).jpg",
+	        "type":"today"
+	    },
+	    {
+	        "name": "探路者 滑雪镜",
+	        "price": "259",
+	        "img_url": "./img/team_buying/产品/1(7).jpg",
+	        "type":"today"
+	    },
+	    {
+	        "name": "维氏 多功能军刀",
+	        "price": "192",
+	        "img_url": "./img/team_buying/产品/1(8).jpg",
+	        "type":"today"
+	    },
+	    {
+	        "name": "维氏 多功能军刀",
+	        "price": "192",
+	        "img_url": "./img/team_buying/产品/1(8).jpg",
+	        "type":"today"
+	    } 
+	],
+    "nine_class": [
+      {
+        "name": "户外运动",
+        "img_url": "img/all_categories/未标题-2户外运动.jpg",
+        "commodity":[
+    	    {
+		        "name": "川崎 运动背包 羽毛球包 电脑背包",
+		        "price": "299",
+		        "img_url": "./img/team_buying/产品/1(5).jpg"
+		    }, 
+    	    {
+		        "name": "维氏 多功能军刀",
+		        "price": "192",
+		        "img_url": "./img/team_buying/产品/1(8).jpg"
+		    },
+    	    {
+		        "name": "探路者 滑雪镜",
+		        "price": "259",
+		        "img_url": "./img/team_buying/产品/1(7).jpg"
+		    },
+    	    {
+	        	"name": "台湾进口 女子拉力绳",
+	       	 	"price": "159",
+	        	"img_url": "./img/team_buying/产品/1(6).jpg"
+		    },
+    	    {
+		        "name": "维氏 多功能军刀",
+		        "price": "192",
+		        "img_url": "./img/team_buying/产品/1(8).jpg"
+		    }, 
+    	    {
+		        "name": "维氏 多功能军刀",
+		        "price": "192",
+		        "img_url": "./img/team_buying/产品/1(8).jpg"
+		    } 
+        ]
+      },
+      {
+        "name": "服饰鞋包",
+        "img_url": "img/all_categories/未标题-2服饰鞋帽.jpg"
+      },
+      {
+        "name": "珠宝表饰",
+        "img_url": "img/all_categories/未标题-2珠宝手表.jpg"
+      },
+      {
+        "name": "美妆个护",
+        "img_url": "img/all_categories/未标题-2美妆个护.jpg"
+      },
+      {
+        "name": "工艺收藏",
+        "img_url": "img/all_categories/未标题-2工艺收藏.jpg"
+      },
+      {
+        "name": "玩具爱好",
+        "img_url": "img/all_categories/未标题-2玩具爱好.jpg"
+      },
+      {
+        "name": "数码产品",
+        "img_url": "img/all_categories/未标题-2数码产品.jpg"
+      },
+      {
+        "name": "家居园艺",
+        "img_url": "img/all_categories/未标题-2家居园艺.jpg"
+      },
+      {
+        "name": "汽车商城",
+        "img_url": "img/all_categories/未标题-2汽车配件.jpg"
+      }
+    ]	
+}

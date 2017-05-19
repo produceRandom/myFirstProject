@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>全部商品分类</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/attribute.css" />
+	</head>
+	<style>
+		.border{
+			border:1px solid #e7e7e7;
+			border-bottom: 0;
+		}
+		.m-t-10{
+			margin-top: 10px;
+		}
+		.text-ov-hi{
+			width: 1.4rem;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	</style>
+	<body>
+		<?php include "./header_choice.html" ?>
+		<div id="main">
+			<div class="w100">
+				<p class="f-s-40 l-h-200 text-center gray">全部商品分类</p>
+			</div>
+			<div class="p-lr-185">
+				<p class="f-s-32 gray">今日推荐</p>
+			</div>
+			<div class="p-t-50 p-lr-170 f-s-0">
+				<div class="col-5-1 today_recomment">
+					<img src="img/team_buying/产品/2.jpg" class="border"/>
+					<div class="bg-666 text-center white l-h-100">
+						<div class="ver-mid">
+							<p class="f-s-16 text-ov-hi name">Dickies男式针织套头衫</p>
+							<p class="f-s-16">¥<span class="price">459</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php include "./footer.html" ?>
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+	<script type="text/javascript" src="js/commodity.js" ></script>
+	<script>
+		addCommodity(".today_recomment",hot_team_buying)
+	</script>
+</html>

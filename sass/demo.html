@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.main-container{
+			font-size: 0;
+			text-align: center;
+		}
+		.center{
+			display: inline-block;
+		}
+		.left-container{
+			width: 200px;
+			display: inline-block;
+			flex-wrap: wrap;
+			padding: 20px;
+			border: 1px solid red;
+			vertical-align: top;
+		}
+		.left-litter-box{
+			box-sizing: border-box;
+			display: inline-block;
+			width: 90px;
+			height: 60px;
+			border: 1px solid red;
+			margin-bottom: 20px;
+		}
+		.left-litter-box:first-child{
+			margin-right: 20px;
+		}
+		.left-big-box{
+			width: 200px;
+			height: 60px;
+			border: 1px solid red;
+		}
+		.right-container{
+			display: inline-block;
+			width: 80px;
+			height: 180px;
+			margin-left:20px ;
+			border: 1px solid red;
+		}
+	</style>
+	<body>
+
+		<div class="main-container">
+			<div class="center">
+				<div class="left-container">
+					<div class="left-litter1"></div>
+					<div class="left-litter2"></div>
+					<div class="left-big"></div>
+				</div>
+				<div class="right-container"></div>
+			</div>
+		</div>
+	</body>
+</html>

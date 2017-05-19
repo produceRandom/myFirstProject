@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>安全中心</title>
+        <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">-->
+	</head>
+	<style>
+	body{
+		margin:0;
+        font-family:"Microsoft YaHei";
+        color: #777777;
+	}
+    .p-l {
+        color: #777;
+        padding-left: 20px;
+        line-height: 32px;
+        font-size: 18px;
+    }
+    .address{
+        height: 30px;
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+    }
+    .address span{
+        font-size: 13px;
+        text-indent : 20px;
+        line-height:35px;
+
+    }
+    .address-btn{
+        height: 30px;
+        width: 135px;
+        font-size:14px;
+        line-height:30px;
+        background-color: #00dfb8;
+        color: #fff;
+        font-weight: 400;
+        text-shadow: none;
+        border: 0;
+        opacity: 1;
+        border-radius: 0;
+        cursor: pointer;
+        text-align: center;
+    }
+
+
+
+	</style>
+    <body>
+    <div class="p-l">收货地址</div>
+    <div class="address">
+        <button class="address-btn">新增收货地址</button>
+        <span>您已创建2个收货地址，最多可创建20个</span>
+    </div>
+    <div style="width: 100%;border: 1px solid #ddd;margin-top: 20px">
+        <div style="height: 20px"></div>
+        <div style="height: 20px;width: 980px;margin: 0 auto">
+            <span style="display: inline-block;float: left;font-size: 14px">地址1</span>
+            <span style="display: inline-block;float: left;text-indent: 20px;font-size: 14px"><a>修改</a></span>
+            <span style="display: inline-block;float: left;text-indent: 20px;font-size: 14px"><a>默认地址</a></span>
+            <div style="display: inline-block;float: right;width: 20px;height: 20px;border: 1px solid #ddd"></div>
+
+        </div>
+        <div style="height: 10px"></div>
+        <table style="text-indent: 20px;font-size: 15px;">
+            <tr><td style="text-align: right;font-size: 14px">收货人：</td>
+                <td>XXX</td>
+            </tr>
+            <tr><td style="text-align: right;font-size: 14px">所在地区：</td>
+                <td>XXX</td>
+            </tr>
+            <tr><td style="text-align: right;font-size: 14px">地址：</td>
+                <td>XXX</td>
+            </tr>
+            <tr><td style="text-align: right;font-size: 14px">手机：</td>
+                <td>XXX</td>
+            </tr>
+            <tr><td style="text-align: right;font-size: 14px">固定电话：</td>
+                <td>XXX</td>
+            </tr>
+            <tr><td style="text-align: right;font-size: 14px">电子邮箱：</td>
+                <td>XXX</td>
+            </tr>
+        </table>
+        <span style="display: inline-block;font-size: 15px;margin-left:770px;margin-top: -15px"><a>编辑</a></span>
+    </div>
+
+
+
+    </body>
+
+</html>

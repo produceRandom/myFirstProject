@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 引入 Bootstrap -->
+
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css">
+
+	<script src="js/angular.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</head>
+<style>
+.title  span:hover{
+    color: #00dfb8 !important;
+}
+</style>
+<body style="">
+        <div class=""  style="width: 155px;margin-right: 20px;">
+            <h1 class="" style="margin: 0;padding-left: 20px;height: 32px;line-height: 32px;width: 155px;font-size: 17px;">个人中心</h1>
+            <h1 class="title" style="margin: 0;padding-left: 20px;margin-top: 10px;height: 32px;width: 155px; font-size: 14px;border: solid 1px #ddd;" ><a href="my_account.php "><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px;">我的订单</span></a></h1>
+            <h1 class="title" style="margin: 0;padding-left: 20px;height: 32px;width: 155px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><a href="my_account.php "><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">我的优惠券</span></a></h1>
+            <h1 class="title" style="margin: 0;padding-left: 20px;height: 32px;width: 155px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><a href="my_account.php "><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">我的万鹤币</span></a></h1>
+            <h1 class="title" style="margin: 0;padding-left: 20px;height: 32px;width: 155px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><a href="my_account.php "><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">账号信息</span></a></h1>
+            <h1 class="title" style="margin: 0;padding-left: 20px;height: 32px;width: 155px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><a href="my_account.php "><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">账号安全</span></a></h1>
+            <h1 class="title" style="margin: 0;padding-left: 20px;height: 32px;width: 155px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><a href="my_account.php "><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">我收藏的商品</span></a></h1>
+            <h1 class="title" style="margin: 0;padding-left: 20px;height: 32px;width: 155px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><a href="my_account.php "><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">管理收货地址</span></a></h1>
+            <h1 class="title" style="margin: 0;padding-left: 20px;height: 32px;width: 155px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><a href="my_account.php "><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">VIP级别</span></a></h1>
+            <h1 class="title" style="margin: 0;padding-left: 20px;height: 32px;width: 155px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><a href="my_account.php "><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">售后服务</span></a></h1>
+        </div>
+
+
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    //html’s font follow scren size change
+    var width=$(window).width()
+    var size=width/10
+    size = size +"px"
+    $("html").css("font-size",size)
+    $(window).resize(function() {
+        var width=$(window).width()
+        var size=width/10
+        size = size +"px"
+        $("html").css("font-size",size)
+    });
+
+</script>
+</html>

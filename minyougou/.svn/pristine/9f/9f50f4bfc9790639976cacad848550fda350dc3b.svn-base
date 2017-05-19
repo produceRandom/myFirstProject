@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 引入 Bootstrap -->
+
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css">
+
+	<script src="js/angular.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</head>
+<style>
+
+    .flex-container {
+        display: -webkit-flex;
+        display: flex;
+    }
+    .item1 {
+
+        flex: 1;
+        margin-top: 30px;
+
+     }
+    .item5 {
+
+        flex: 17;
+        margin-top: 30px;
+
+    }
+    .item4 {
+
+        flex: 7;
+        margin-top: 30px;
+          }
+
+</style>
+<body style="min-width: 1200px;">
+    <?php include "./header_1.html"?>
+    <div class="flex-container" style="width: 1550px;margin: 0 auto;">
+        <div class="item1 "  style="width: 160px;">
+            <h1 class="col-sm-12" style="margin: 0;padding-left: 20px;height: 32px;line-height: 32px;width: 160px;font-size: 14px;border: solid 1px #ddd;">个人中心</h1>
+            <h1 class="col-sm-12" style="margin: 0;padding-left: 20px;height: 32px;width: 160px; font-size: 14px;border: solid 1px #ddd;margin-top:25px" ><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px;">我的订单</span></h1>
+            <h1 class="col-sm-12" style="margin: 0;padding-left: 20px;height: 32px;width: 160px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">我的优惠券</span></h1>
+            <h1 class="col-sm-12" style="margin: 0;padding-left: 20px;height: 32px;width: 160px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">我的万鹤币</span></h1>
+            <h1 class="col-sm-12" style="margin: 0;padding-left: 20px;height: 32px;width: 160px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">账号信息</span></h1>
+            <h1 class="col-sm-12" style="margin: 0;padding-left: 20px;height: 32px;width: 160px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">账号安全</span></h1>
+            <h1 class="col-sm-12" style="margin: 0;padding-left: 20px;height: 32px;width: 160px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">我收藏的商品</span></h1>
+            <h1 class="col-sm-12" style="margin: 0;padding-left: 20px;height: 32px;width: 160px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">管理收货地址</span></h1>
+            <h1 class="col-sm-12" style="margin: 0;padding-left: 20px;height: 32px;width: 160px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">VIP级别</span></h1>
+            <h1 class="col-sm-12" style="margin: 0;padding-left: 20px;height: 32px;width: 160px; font-size: 14px;border: solid 1px #ddd;border-top: 0;" ><span style="color:#777;cursor:hand;line-height: 30px;font-size: 13px">售后服务</span></h1>
+        </div>
+        <div class="item4 " style="">
+            <div class="col-sm-12" style="padding-left: 20px;line-height: 32px;font-size: 17px">账号中心</div>
+            <div class="" style="border: 1px solid #ddd;height: 50px;margin-top:57px">
+            </div>
+            <div class="flex-container" style="">
+                <div class="item5" style="border: 1px solid #ddd;height:146px;width: 646px">
+                </div>
+                <div class="item1"></div>
+                <div class="item5" style="border: 1px solid #ddd;height:146px;width: 646px">
+                </div>
+            </div>
+            <div class="col-sm-12" style="border: 1px solid #ddd;height:146px;margin-top: 30px"></div>
+        </div>
+
+    </div>
+
+
+    <?php include "./footer_describe_1.html"?>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    //html’s font follow scren size change
+    var width=$(window).width()
+    var size=width/10
+    size = size +"px"
+    $("html").css("font-size",size)
+    $(window).resize(function() {
+        var width=$(window).width()
+        var size=width/10
+        size = size +"px"
+        $("html").css("font-size",size)
+    });
+
+</script>
+</html>

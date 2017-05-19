@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+	body{
+		margin:0
+	}
+	 .flex-container {
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    .box{
+        width: 100%;
+    }
+    .box-content{
+        height:145px;
+        width: 48.5%;
+        background-color: #fbfbfb;
+        border: 1px solid #ddd
+    }
+    .box-content-t{
+        height:145px;
+        margin-top: 30px;
+        background-color: #fbfbfb;
+        border: 1px solid #ddd
+
+    }
+    .p-l{
+        padding-left: 20px;
+        line-height: 32px;
+        font-size: 17px
+
+    }
+    .content{
+        height: 50px;
+        padding:0 10px;
+        margin-top: 20px;
+        background: rgba(0,223,184,.2);
+    }
+    strong{
+        font-size: 15px;
+        line-height: 50px;
+    }
+    .content-edit{
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid #ddd;
+        padding: 0 15px;
+        background-color: #f5f5f5
+    }
+    .edit{
+        color: black;
+        float: right;
+        font-size: 13px
+    }
+	</style>
+	<body>
+        <div class="box">
+            <div class="p-l">账号中心</div>
+            <div class="content">
+                <strong>Hello, 尊敬的VIP4会员!</strong>
+            </div>
+            <div class="flex-container" style="margin-top: 30px">
+                <div class="box-content" style="margin-right: 30px">
+                    <div class="content-edit" >
+                        <span style="font-size: 15px;font-weight: 700;">联系方式</span><a href="#"><span class="edit">编辑</span></a>
+                    </div>
+                    <div style="padding: 10px 15px;">
+                        你的账号暂时没有新信息
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div class="content-edit">
+                        <span style="font-size: 15px;font-weight: 700;">信息提醒编辑</span><a href="#"><span class="edit">编辑</span></a>
+                    </div>
+                    <div style="padding: 10px 15px;">
+                        你的账号暂时没有新信息
+                    </div>
+                </div>
+            </div>
+            <div class="box-content-t">
+                <div class="content-edit">
+                    <span style="font-size: 15px;font-weight: 700;">VIP特权信息</span><a href="#"><span class="edit">查看全部特权</span></a>
+                </div>
+                <div style="padding: 10px 15px;">
+                    你的账号暂时没有新信息
+                </div>
+            </div>
+        </div>
+
+	</body>
+</html>

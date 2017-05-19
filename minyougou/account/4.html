@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的订单</title>
+        <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">-->
+	</head>
+	<style>
+	body{
+		margin:0
+	}
+	 .flex-container {
+        display: -webkit-flex;
+        display: flex;
+         width: 100%;
+         height: 65px;
+         background: rgb(250,219,216);
+    }
+    .flex-container span{
+        line-height: 65px;
+        /*margin-left:20px;*/
+        color:black;
+        font-size: 13px
+    }
+    .flex-container span span{
+        color:rgb(240,100,100)
+    }
+    .container{
+        display: -webkit-flex;
+        display: flex;
+    }
+    .p-l{
+        color: #777;
+        padding-left: 20px;
+        line-height: 32px;
+        font-size: 17px;
+
+    }
+
+    .box{
+        width: 100%;
+        height: 407px
+    }
+
+    .item{
+        flex: 1;
+    }
+    .item4{
+        flex: 4;
+    }
+    .state{
+        line-height: 28px;
+        font-size: 13px;
+        color: #777;
+    }
+    .state-lh{
+        line-height: 40px;
+    }
+    .bg-w{
+        background: whitesmoke;
+        height: 28px;
+    }
+    .border{
+        margin:15px;height: 40px;width: 55px;border: 1px solid #ddd
+    }
+    .edit{
+        border-right: 2px solid white;
+        background: whitesmoke
+    }
+    .edit a{
+        line-height: 115px
+    }
+    .coupon{
+
+        margin-top: 30px;
+        height: 115px;
+        text-align: center
+    }
+    .pagination {
+        display: inline-block;
+        padding-left: 0;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+    .pagination li{
+        display: inline;
+        font-size: 14px;
+
+    }
+    .pagination li a{
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #428bca;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+
+    }
+    .pagination li a span{
+        font-size: 12px;
+    }
+    table {
+        width: 100%;
+        border-right: solid 1px whitesmoke;
+        border-top: solid 1px whitesmoke;
+        margin-top: 20px;
+        border-spacing: 0;
+        empty-cells: show;
+        font-size: 13px;
+        color: #777;
+    }
+    table td{
+        height: 35px;
+        text-align: center;
+        border-left: solid 1px whitesmoke;
+        border-bottom: solid 1px whitesmoke;
+        background: rgb(250,219,216)
+    }
+    .td-bg{
+        background: rgb(255,236,234)
+    }
+
+
+	</style>
+    <body>
+    <div class="p-l">我的万鹤币</div>
+
+    <div class="flex-container" style="margin-top: 20px">
+        <div class="item4 flex-container">
+            <span class="item" style="margin-left: 20px">可用万鹤币<span>114</span>个</span>
+            <span class="item" style="text-align: left">2017-01-01 即将过期万鹤币<span>114</span>个(次日18点更新过期数据)</span>
+            <span class="item"><a>开通会员，赚万鹤币 ></a></span>
+        </div>
+        <div class="item"></div>
+    </div>
+    <table >
+        <tr>
+            <td style="width: 265px;">日期</td>
+            <td style="width: 250px;">收入/支出</td>
+            <td style="width: 485px;">详细说明</td>
+        </tr>
+        <tr>
+            <td class="td-bg">2017-01-16</td>
+            <td class="td-bg"><span style="color:green">+99</span></td>
+            <td class="td-bg">购物送万鹤币（商品号：10402893082）</td>
+        </tr>
+        <tr>
+            <td class="td-bg">2017-01-16</td>
+            <td class="td-bg"><span style="color:green">+99</span></td>
+            <td class="td-bg">购物送万鹤币（商品号：10402893082）</td>
+        </tr>
+        <tr>
+            <td class="td-bg">2017-01-16</td>
+            <td class="td-bg"><span style="color:green">+99</span></td>
+            <td class="td-bg">购物送万鹤币（商品号：10402893082）</td>
+        </tr>
+        <tr>
+            <td class="td-bg">2017-01-16</td>
+            <td class="td-bg"><span style="color:green">+99</span></td>
+            <td class="td-bg">购物送万鹤币（商品号：10402893082）</td>
+        </tr>
+    </table>
+    <div style="width: 100%;text-align: right">
+        <ul class="pagination" style="margin-top: 10px;margin-bottom: 40px">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true"><<</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">>></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    </body>
+
+</html>

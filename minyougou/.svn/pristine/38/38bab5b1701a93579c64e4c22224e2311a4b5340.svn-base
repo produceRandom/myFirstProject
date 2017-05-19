@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 引入 Bootstrap -->
+
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css">
+
+	<script src="js/angular.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</head>
+<style>
+
+
+    .header{
+        background: url(img/review/top.png) no-repeat;
+        background-size: cover;
+        height:4.083rem;
+        line-height:4.083rem;
+        text-align: center;
+        min-width: 1190px;
+    }
+    .flex-container {
+        display: -webkit-flex;
+        display: flex;
+    }
+    .item1 {
+        margin-top: 150px;
+        flex: 2;
+
+     }
+    .item2 {
+        margin-top: 150px;
+              flex: 3;
+
+          }
+
+</style>
+<body style="min-width: 1190px;">
+    <?php include "./header.html"?>
+
+
+    <div class="flex-container" style="width: 1270px;margin: 0 auto;">
+        <div class="container item1" >
+            <div class="input-group" style="width: 370px;margin-bottom: 25px">
+                <div class="input-group-addon" style="width:80px;">用户名</div>
+                <input class="form-control" type="email" placeholder="" style="height: 35px">
+            </div>
+
+            <div class="input-group" style="width: 370px;margin-bottom: 25px">
+                <div class="input-group-addon" style="width:80px;">手机</div>
+                <input class="form-control" type="email" placeholder="" style="height: 35px">
+            </div>
+
+            <div class="input-group" style="width: 370px;margin-bottom: 25px">
+                <div class="input-group-addon" style="width:80px;">邮箱</div>
+                <input class="form-control" type="email" placeholder="" style="height: 35px">
+            </div>
+
+            <div class="input-group" style="width: 370px;margin-bottom: 25px">
+                <div class="input-group-addon" style="width:80px;">城市</div>
+                <input class="form-control" type="email" placeholder="" style="height: 35px">
+            </div>
+
+            <div class="input-group" style="width: 370px;margin-bottom: 25px">
+                <div class="input-group-addon" style="width:80px;">密码</div>
+                <input class="form-control" type="email" placeholder="" style="height: 35px">
+            </div>
+            <div class="input-group" style="width: 370px;margin-bottom: 45px">
+                <div class="input-group-addon" style="width:80px;">确认密码</div>
+                <input class="form-control" type="email" placeholder="" style="height: 35px">
+            </div>
+
+            <div class="checkbox" style="width: 370px;margin-bottom: 20px">
+                <label style="padding: 0">
+                    <input type="checkbox" style="width: 20px;height:20px;vertical-align: middle;margin:0;border-radius: 0">
+                </label>
+            </div>
+
+            <div class="input-group" style="width: 370px;margin-bottom: 45px">
+                <button class="form-control btn btn-default" style="height: 40px;background: black;color: white">立即注册</button>
+            </div>
+        </div>
+        <div class="item2">
+            <img src="./img/register/1.png">
+        </div>
+    </div>
+    <?php include "./footer_describe_1.html"?>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    //html’s font follow scren size change
+    var width=$(window).width()
+    var size=width/10
+    size = size +"px"
+    $("html").css("font-size",size)
+    $(window).resize(function() {
+        var width=$(window).width()
+        var size=width/10
+        size = size +"px"
+        $("html").css("font-size",size)
+    });
+
+</script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	</script>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		div,body,p{
+			margin: 0;
+		}
+		.col-2-1{
+			width: 50%;
+			height: 100px;
+			display: inline-block;
+			padding: 0 15px;
+			vertical-align: top;
+			font-size: 16px;
+		}
+		.weakness{
+			height: 100%;
+			border: 1px solid;
+			position: relative;
+			padding: 0 20px;
+		}
+		.right-we{
+			text-align: right;
+			padding-left: 0;
+		}
+		.triangle{
+			position: absolute;
+			top: 0;
+			width:0;
+			height: 0;
+			border: 50px solid transparent;
+			border-left-color: #007AFF ;
+			border-top-color: #007AFF ;
+		}
+		.right-tr{
+			right: 0;
+			border-right-color: #007AFF ;
+			border-left-color: transparent
+		}
+		.title{
+			line-height: 50px;
+		}
+		.content{
+			font-size: 12px;
+			margin: 0;
+			margin-right: 50px;
+		}
+		.right-co{
+			margin: 0;
+			margin-left: 50px;
+		}
+	</style>
+	<body style="font-size: 0;">
+
+		<div class="col-2-1">
+			<div class="weakness">
+				<p class="title">标题文本</p>
+				<p class="content">内容内容内容内容内容内容内容内容</p>
+				<div class="triangle  right-tr"></div>
+			</div>
+		</div>
+		<div class="col-2-1">
+			<div class="weakness right-we">
+				<p class="title">标题文本</p>
+				<p class="content right-co">内容内容内容内容内容内容内容内容内容</p>
+				<div class="triangle"></div>
+			</div>
+		</div>		
+	</body>
+
+</html>

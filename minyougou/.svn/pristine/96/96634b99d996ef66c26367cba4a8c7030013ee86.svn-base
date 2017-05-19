@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/iconfont.css">
+		<title></title>
+	</head>
+	<style>
+		.nav{
+			width:100%;
+			min-width: 1300px;
+			background: rgba(0,0,0,0.5);
+			line-height: 74px;
+			text-align: center;
+			position: fixed;
+			top: 0;
+			z-index: 5;
+		}
+		*{
+			font-size: 20px;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		li{
+			display: inline-block;
+			color: #fff;
+			margin: 0 0.234rem;
+		}
+		.list-down{
+			background: rgba(0,0,0,0.3);
+			position: absolute;
+			visibility: hidden;
+			line-height: 60px;
+		}
+		.list-down  li{
+			margin: 0;
+			display: block;
+			font-size: 16px;
+		}
+		.list-down ul li:first-child{
+
+		}
+		.rgba-3{
+			background: rgba(0,0,0,0.3);
+		}
+		a{
+			text-decoration: none !important;
+			color: white;
+		}
+		a:link,a:visited{
+			text-decoration: none;
+			color: white;
+		}
+		a:hover,a:active{
+			text-decoration: none;
+			color: white;
+		}
+
+			
+		
+
+	</style>
+	<body>
+		<nav class="nav">
+			<ul>
+				<!--<li id="all-classify">
+					 　<a href="all_categories.php">全部商品分类</a>
+					<i class="icon iconfont icon-caretleft" style="margin-left: 0.08rem;" id="openlist_down"></i>　
+					
+					<div class="list-down">
+						
+						<ul>
+							<li>户外运动</li>
+							<li>服饰鞋包</li>
+							<li>珠宝表饰</li>
+							<li>美妆个护</li>
+							<li>工艺收藏</li>
+							<li>玩具爱好</li>
+							<li>数码产品</li>
+							<li>家居园艺</li>
+							<li>汽车商城</li>
+						</ul>
+
+					</div>
+				</li>-->
+				<a href="all_categories.php"><li>全部商品分类</li></a>
+				<a><li>DIY个性化定制</li></a>
+				<a href="city_feature.php"><li>城市特色</li></a>
+				<a href="index.php"><li><img src="img/icon/矢量智能对象.png" /></li></a>
+				<a href="team_buying.php"><li>团购</li></a>
+				<a href="skill.php"><li>秒杀</li></a>
+				<a href="auction.php"><li>拍卖抢购</li></a>
+				<li><a href="register.php"><span class="white">注册</span></a>/登录</li>
+			</ul>
+		</nav>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script>
+	    //html’s font follow scren size change
+	    var width=$(window).width();
+	    var size=width/10;
+	    size = size +"px";
+	    $("html").css("font-size",size);
+	    $(window).resize(function() {
+	        var width=$(window).width();
+	        var size=width/10;
+	        size = size +"px";
+	        $("html").css("font-size",size);
+	    });
+
+
+ 	$("#openlist_down").click(function(){
+		if ($(this).hasClass("icon-caretleft")) {
+				$(this).removeClass("icon-caretleft");
+				$(this).addClass("icon-caretdown");
+				var list_width = $("nav ul li:eq(0)").css("width");	
+				$(".list-down").css("visibility","visible");
+				$(".list-down").css("width",list_width);
+				$("#all-classify").addClass("rgba-3");
+		}else{
+				$(this).removeClass("icon-caretdown");
+				$(this).addClass("icon-caretleft");
+				$(".list-down").css("visibility","hidden");
+				$("#all-classify").removeClass("rgba-3")
+		}
+	})
+
+
+	</script>
+</html>

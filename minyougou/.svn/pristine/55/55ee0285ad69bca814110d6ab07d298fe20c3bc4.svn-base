@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的订单</title>
+        <!--<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">-->
+	</head>
+	<style>
+	body{
+		margin:0
+	}
+	 .flex-container {
+        display: -webkit-flex;
+        display: flex;
+    }
+    .flex-container a{
+        font-size: 14px;
+        text-decoration:none;
+        color: #000000
+    }
+    .container{
+        display: -webkit-flex;
+        display: flex;
+        height: 70px;
+    }
+    .p-l{
+        color: #777;
+        padding-left: 20px;
+        line-height: 32px;
+        font-size: 17px;
+
+    }
+
+    .box{
+        width: 100%;
+        height: 407px
+    }
+
+    .item{
+        flex: 1;
+    }
+    .state{
+        line-height: 28px;
+        font-size: 13px;
+        color: #777;
+    }
+    .state-lh{
+        line-height: 40px;
+    }
+    .bg-w{
+        background: whitesmoke;
+        height: 28px;
+    }
+    .border{
+        margin:15px;height: 40px;width: 55px;border: 1px solid #ddd
+    }
+    .edit{
+        border-right: 2px solid white;
+        background: whitesmoke
+    }
+    .edit a{
+        line-height: 115px
+    }
+    .coupon{
+
+        margin-top: 30px;
+        height: 115px;
+        text-align: center
+    }
+
+
+
+	</style>
+    <body>
+    <div class="box">
+        <div class="p-l">我的优惠券</div>
+        <div class="flex-container bg-w" style="margin-top: 20px">
+            <div class="item flex-container">
+                <span class="item state" style="text-indent: 20px;">可用优惠券</span>
+                <span class="item state" >优惠券类型</span>
+                <span class="item state" >新到账</span>
+                <span class="item state" >即将到期</span>
+                <span class="item state" >最优惠</span>
+            </div>
+            <div class="item" style="text-align: center">
+                <span class="state">优惠券使用规则></span>
+            </div>
+        </div>
+        <div class="container" style="border-bottom: 1px solid #ddd">
+            <div class="item flex-container" style="text-align: left;">
+                <div class="item" >
+                    <div class="border"></div>
+                </div>
+                <p class="item state state-lh">优惠券1</p>
+                <p class="item state state-lh">优惠券类型</p>
+                <p class="item state state-lh">优惠券到账日期</p>
+            </div>
+            <div class="item" style="text-align: center">
+                <p class="state" style="line-height: 40px;">使用优惠券</p>
+            </div>
+
+        </div>
+        <div  class="container">
+            <div class="item flex-container" style="text-align: left;">
+                <div class="item" style="">
+                    <div class="border"></div>
+                </div>
+                <p class="item state state-lh">优惠券2</p>
+                <p class="item state state-lh">优惠券类型</p>
+                <p class="item state state-lh">优惠券到账日期</p>
+            </div>
+            <div class="item" style="text-align: center">
+                <p class="state state-lh">使用优惠券</p>
+            </div>
+        </div>
+        <div class="flex-container coupon" >
+            <div class="item edit"><a href="#" >优惠券使用规则</a></div>
+            <div class="item edit"><a href="#" >领券中心</a></div>
+            <div class="item edit"><a href="#" >购物领券</a></div>
+            <div class="item edit"><a href="#" >优惠券兑换</a></div>
+        </div>
+    </div>
+
+    </body>
+
+</html>

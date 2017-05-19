@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>城市特色</title>
+
+	</head>
+	<style>		
+	.header{
+		background: url(img/index/top.jpg) no-repeat;
+		background-size: cover;
+		height:784px;
+		text-align: center;
+		line-height: 784px;
+	}
+	.choice-box{
+		display: inline-block;
+		width: 30%;
+		height: 30%;
+		background: rgba(255,255,255,0.2);
+		padding-top: 30px;
+		border-radius: 10px;
+	}
+	.select{
+		width: 100%;
+		line-height: 100%;
+	}
+	.select input{
+		width: 70%;
+		border-radius: 15px;
+		height: 38px;
+		outline: none;
+	}
+	</style>
+	<body>
+		<header class="header">
+			<?php include "./header.html"?>
+			<div class="choice-box">
+					<p style="color: #fff;line-height: 0.484rem;font-size: 34px">您的选择</p>
+					<div class="select">
+						<input  type="text" style="margin-left: 32px;"/>	
+						<i class="icon iconfont icon-shouye-sousuo" style="color: #000;position: relative;left: -32px;"></i>				
+					</div>				
+			</div>
+			
+		</header>
+	</body>
+</html>

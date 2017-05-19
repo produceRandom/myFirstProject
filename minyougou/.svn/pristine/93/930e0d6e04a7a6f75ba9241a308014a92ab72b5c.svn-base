@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes" />
+		<title>详情页</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/attribute.css" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+	</head>
+	<style>
+		html,body{
+			min-width: 1200px;
+		}
+		#main{
+			padding-top: 74px;
+		}
+		.po-re{
+			position: relative;
+		}
+		.p-lr-185{
+			padding-left:0.963rem;
+			padding-right: 0.963rem;
+		}
+		.switch-pic{
+			position: relative;
+			height: 600px;
+		}
+		.switch-item{
+			width: 550px;
+			height: 550px;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			position: absolute;
+			margin: auto;
+			box-shadow:0 10px 60px -5px #999;
+			cursor: pointer;
+		}
+
+		.item0{
+			transform: translate(-200px,20px) scale(0.8,0.8);
+			transition: all 0.5s;
+			-webkit-transform: translate(-200px,20px) scale(0.8,0.8);
+			-webkit-transition: all 0.5s;
+			z-index: 1;
+		}
+		.item1{
+			transform: translate(0,0) scale(1,1);
+			transition: all 0.5s;
+			-webkit-transform: translate(0,0) scale(1,1);
+			-webkit-transition: all 0.5s;			
+			z-index: 4;
+		}
+		.item2{
+			transform: translate(200px,20px) scale(0.8,0.8);
+			transition: all 0.5s;
+			-webkit-transform: translate(200px,20px) scale(0.8,0.8);
+			-webkit-transition: all 0.5s;
+			z-index: 3;
+		}
+		.item3{
+			transform: translate(350px,20px) scale(0.6,0.6);
+			transition: all 0.5s;
+			-webkit-transform: translate(350px,20px) scale(0.6,0.6);
+			-webkit-transition: all 0.5s;
+			z-index: 2;
+		}		
+		.next{
+			position: absolute;
+			right: 0;
+			line-height: 550px;
+			cursor: pointer;
+		}
+		.prve{
+			position: absolute;
+			line-height: 550px;
+			cursor: pointer;
+		}
+		.commodity_name table{
+			width: 30%;
+			line-height: 24px;
+			margin-left: 32.5%;
+		}
+		.commodity_name table tr{
+			height: 72px;
+		}		
+		.commodity_name table tr td{
+			width: 50%;
+			text-align: left;
+			vertical-align: bottom;
+			white-space: nowrap;
+		}
+		.commodity_name .text-center{
+			padding-left: 20%;
+		}
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+		}
+		input::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+		}
+		.price{
+			color: red;
+			font-size: 60px;			
+			letter-spacing: 5px;
+			
+		}
+		.operation table{
+			margin-left: 47.5%;
+			width: 50%;
+		}
+		.operation table tr{
+			
+		}
+		.operation table tr td{
+			width: 18%;
+			text-align: left;
+		}
+		.operation table tr td img{
+			width: 43px;
+		}
+		.add_and_reduce{
+			background: #E7E7E7;width: 20px;display: inline-block;text-align: center;
+		}
+		.line{
+			background:#e7e7e7;
+			height: 30px;
+		}
+		.long-left{
+			width:19% ;
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 50px;
+		}
+		.long-right{
+			width: 77%;
+			display: inline-block;
+			vertical-align: top;
+
+		}
+		.ver-top{
+			vertical-align: top;
+		}
+		.new_recommend{
+			border-left: 1px solid #e7e7e7;
+			
+		}
+	</style>
+	<body>
+		<?php include "./header.html" ?>
+		<div id="main">
+			<div class="p-lr-185 po-re">
+				<div class="l-h-100 f-s-14 gray">
+					<span>所有分类</span>
+					<span class="icon iconfont icon-right"></span>
+					<span>居家园艺</span>
+				</div>
+				<div class="switch-pic">
+					<div class="switch-item item0" data-index='0'><img src="img/details/5.jpg" /></div>
+					<div class="switch-item item1" data-index='1'><img src="img/details/2.jpg" /></div>
+					<div class="switch-item item2" data-index='2'><img src="img/details/3.jpg" /></div>
+					<div class="switch-item item3" data-index='3'><img src="img/details/1.jpg" /></div>
+					<span class="prve icon iconfont icon-left" style="font-size: 40px;" onclick="prve()"></span>
+					<span class="next icon iconfont icon-right" style="font-size: 40px;" onclick="next()"></span>
+				</div>				
+			</div>
+			<div class="commodity_name">
+				<table>
+					<tr>
+						<td></td>
+						<td class="f-s-40">Ventry</label></td>
+					</tr>				
+					<tr style="height: 50px;">
+						<td></td>
+						<td class="f-s-14">泰国原装进口天然乳胶枕头</td>
+					</tr>
+					<tr>
+						<td class="text-center">价格</td>
+						<td class="price">289.00<span style="font-size: 24px">元</span></td>
+					</tr>
+					<tr>
+						<td class="text-center">类型</td>
+						<td>白色</td>
+					</tr>
+					<tr>
+						<td class="text-center">数量</td>
+						<td>
+							<span class="add_and_reduce">-</span>
+							<input type="number" value="1" style="width: 24px;text-align: center;border: none;"/>
+							<span class="add_and_reduce">+</span>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="operation p-t-50 m-b-80">
+				<table>
+					<tr>
+						<td><img src="img/details/icon/确定-2.png" /> </td>
+						<td><img src="img/details/icon/购物车.png" /></td>
+						<td><img src="img/details/icon/追溯.png" /></td>
+						<td style="width: 46%;text-align: center;"><img src="img/details/icon/评价.png" /></td>
+					</tr>
+				</table>
+			</div>
+			<div class="line"></div>
+			
+			<!--详情长图-->
+			<div class="p-t-50 p-lr-185">
+				<div class="long-left">
+					<div class="bg-666 l-h-60 white">　新品推荐</div>
+					<div class="new_recommend">
+						<img  src="img/details/294-392/_0000_G & F Knit Garden Gloves with Double 男士防水无缝 1536XL Microfoam 腈类.jpg" />
+						<div class="bg-999" style="height:148px">
+							<p class="f-s-16 white text-center l-h-50">男士防水无缝 1536XL Microfoam 腈类</p>
+							<p class="f-s-32 text-right white le-s-5">¥52.5</p>
+						</div>
+					</div>
+					<div class="new_recommend">
+						<img  src="img/details/294-392/_0001_81XtB+EeoLL._SL1500_.jpg" />
+						<div class="bg-999" style="height:148px">
+							<p class="f-s-16 white text-center l-h-50">男士防水无缝 1536XL Microfoam 腈类</p>
+							<p class="f-s-32 text-right white le-s-5">¥52.5</p>
+						</div>
+					</div>
+					<div class="new_recommend">
+						<img  src="img/details/294-392/_0002_81rystHcFZL._SL1500_.jpg" />
+						<div class="bg-999" style="height:148px">
+							<p class="f-s-16 white text-center l-h-50">男士防水无缝 1536XL Microfoam 腈类</p>
+							<p class="f-s-32 text-right white le-s-5">¥52.5</p>
+						</div>
+					</div>
+				</div>
+				<div class="long-right">
+					<div class="f-s-0">
+						<div class="col-3-1 ver-top">
+							<p>适用人群：成人</p>
+							<p>填充物：乳胶（橡胶）</p>
+							<p>货号：PT3</p>
+							<p>产品：合格品</p>
+						</div>
+						<div class="col-3-1 ver-top">
+							<p>重量：1.5kg</p>
+							<p>形状：长方形</p>
+							<p>适用人数：单人</p>
+						</div>
+						<div class="col-3-1 ver-top">
+							<p>品牌：Ventry</p>
+							<p>枕头面料：聚酯纤维</p>
+							<p>颜色分类：PT3高低按摩款</p>
+						</div>
+					</div>
+					<div class="p-t-50">
+						<img src="img/details/Ventry 泰国原装进口天然乳胶枕头.jpg" />
+					</div>
+				</div>
+			</div>
+		</div><!--main结束-->
+		<?php include "./footer.html" ?>
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js" ></script>
+	<script type="text/javascript" src="js/commodity.js" ></script>
+	<script>
+//自动轮播	
+	    var auto = function(){
+			var int = setInterval("next()",250)
+			val = int	
+		}
+		
+//		$(function(){
+//			auto();
+//			setTimeout(function(){ clearInterval(1) },4000)
+//		})
+
+		$(".switch-item").click(function(){
+				var count = $(this).attr("data-index")
+				if (count == 0){
+					count = 1;
+					prve();
+				}else if (count == 1) {
+					
+				}else{
+					count = count - 1;
+					count = count * 250;
+					auto();			
+					setTimeout(function(){ clearInterval(val) },count);
+				}
+			})
+		
+		
+		
+		function next(){
+			function update(num){
+				var num = parseInt(num) + 3
+				return num % 4
+			}
+			for(var i in [0,1,2,3]){
+				var obj = $($('.switch-item')[i])
+				var index = obj.attr('data-index')
+				obj.attr('data-index', update(index))
+				index = obj.attr('data-index')
+				obj.removeClass('item0 item1 item2 item3')								
+				obj.addClass('item' + index)				
+			}			
+		}
+		function prve(){
+			function update(num){
+				var num = parseInt(num) + 1
+				return num % 4
+			}
+			for(var i in [0,1,2,3]){
+				var obj = $($('.switch-item')[i])
+				var index = obj.attr('data-index')
+				obj.attr('data-index', update(index))
+				index = obj.attr('data-index')
+				obj.removeClass('item0 item1 item2 item3')								
+				obj.addClass('item' + index)				
+			}			
+		}
+	</script>
+</html>

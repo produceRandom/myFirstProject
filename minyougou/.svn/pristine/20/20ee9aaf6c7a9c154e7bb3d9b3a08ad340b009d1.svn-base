@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>全部商品分类</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/attribute.css" />
+	</head>
+	<style>
+
+	</style>
+	<body>
+		<?php include "./header_choice.html" ?>
+		<div id="main">
+			<div class="w100">
+				<p class="f-s-40 l-h-200 text-center gray">全部商品分类</p>
+			</div>
+		</div>
+		<?php include "./footer.html" ?>
+	</body>
+</html>
