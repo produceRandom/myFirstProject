@@ -1,0 +1,16 @@
+.hidden { display: none; }
+
+#header { height: 50px; background: #343434; color: white; line-height: 50px; display: flex; justify-content: space-between; margin-bottom: 30px; }
+#header .header-left { display: flex; }
+#header .header-left h1 { font-size: 24px; letter-spacing: 20px; margin: 0 20px; }
+#header .header-left .header-left-nav { display: flex; }
+#header .header-left .header-left-nav-list { margin-right: 30px; cursor: pointer; font-size: 16px; }
+#header .header-left .header-left-nav-list-current { background-size: 5px 5px; background-image: linear-gradient(to top, white 5px, white, transparent 5px); background-repeat: no-repeat; background-position: center 80%; }
+#header .header-right { display: flex; }
+#header .header-right .header-right-icon { box-sizing: border-box; padding: 0 20px; }
+#header .header-right .header-right-personIcon { position: relative; cursor: pointer; }
+#header .header-right .header-right-personIcon:hover { background: rgba(0, 0, 0, 0.5); }
+#header .header-right .header-right-personIcon-menu { box-sizing: border-box; padding-left: 20px; position: absolute; top: 50px; right: 0; width: 160px; background: rgba(0, 0, 0, 0.6); }
+#header .header-right .header-right-search { width: 220px; height: 100%; padding: 0; border: 0; vertical-align: top; font-size: 16px; box-sizing: border-box; padding-left: 20px; }
+
+/*# sourceMappingURL=index.css.map */

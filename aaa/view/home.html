@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../style/css/reset.css" />
+		<link rel="stylesheet" href="../style/css/home.css" />
+		<script type="text/javascript" src="../script/use/vue.min.js" ></script>
+	</head>
+	<body>
+		<div class="main">
+			<div v-for="item in commodity" class="main-commodity-pic" v-on:mouseover="toggleModal(item)">
+				<img v-bind:src="item.imgurl"/>
+				<div class="main-commodity-pic-shadow"  v-bind:class="{hidden:item.seen}">
+					<p class="main-commodity-name">Bow earrings</p>
+					<p class="main-commodity-price">$36.6</p>
+				</div>
+			</div>
+		</div>
+		
+		
+	<script>
+
+		
+		var commodity = []
+		for(let i=2;i<38;i++){
+			let img_url = `../IMG/commodity/${i}.png`
+			
+			commodity.push({"imgurl":img_url,"seen":true})
+		}
+		
+		var home = new Vue({
+			el:".main",
+			data:{
+				commodity
+			},
+			methods:{
+				toggleModal:function(item){
+					commodity.forEach(function(value,index){
+						value.seen = true
+						
+					})
+					item.seen  = false
+					commodity.reverse().reverse()
+
+				}
+			}
+		})
+	</script>	
+	</body>
+</html>
