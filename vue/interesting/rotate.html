@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+    <title>报表</title>
+    <style>
+			body,ul,li{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+			}
+
+
+    </style>
+</head>
+<body>
+
+<style>
+	img{
+		height: 50px;
+	}
+	.fixdFooterHeader{
+		width: 100vw;
+		display: flex;
+		position: fixed;
+		bottom: 0;
+		justify-content: space-between;
+		
+	}
+    .fixdFooterHeader > li{
+    	height: 60px;
+        position: relative;
+        background: rgba(74,130,255,0.8);
+    }
+    .childList{
+        position: absolute;
+        width: 100%;
+        height: 250px;
+        bottom: 60px;
+        
+        left: 2%;
+        display: none;
+    }
+    .childList > div{
+    	position: absolute;
+    	height: 50px;
+    	line-height: 50px;
+    	background: rgba(74,130,255,0.5);
+    	width: 100%;
+    	transform-origin: right bottom; 
+    	bottom: 0;
+    }
+    
+    .show{
+        display: block;
+        animation: show 0.5s;
+    }
+    @keyframes show{
+    	from{transform: scale(0,0);}
+    	to{transform: scale(1,1);}
+    }
+    .hide{
+    	display: none;
+    }
+</style>
+<ul class="fixdFooterHeader">
+    <li>
+    	<img src="img/1.png" />
+		<div class="childList">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+    </li>
+    <li>
+    	<img src="img/7.png" />
+		<div class="childList">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+    </li>
+    <li><img src="img/8.png"><div class="childList"><div></div><div></div><div></div><div></div><div></div></div></li>
+    <li><img src="img/9.png"><div class="childList"><div></div><div></div><div></div><div></div><div></div></div></li>
+    <li><img src="img/1.png"><div class="childList"><div></div><div></div><div></div><div></div><div></div></div></li>
+    <li><img src="img/7.png"><div class="childList"><div></div><div></div><div></div><div></div><div></div></div></li>
+    <li><img src="img/8.png"><div class="childList"><div></div><div></div><div></div><div></div><div></div></div></li>
+    <li><img src="img/9.png"><div class="childList"><div></div><div></div><div></div><div></div><div></div></div></li>
+    <li><img src="img/7.png"><div class="childList"><div></div><div></div><div></div><div></div><div></div></div></li>
+    <li><img src="img/8.png"><div class="childList"><div></div><div></div><div></div><div></div><div></div></div></li>
+    <li><img src="img/9.png"><div class="childList"><div></div><div></div><div></div><div></div><div></div></div></li>
+</ul>
+
+<script src="./jquery-3.1.1.min.js"></script>
+<script>
+	var PI = Math.PI
+	function sin(angle) {
+	    return Math.sin((angle*2*PI)/360).toFixed(5)
+	}
+	function cos(angle) {
+	    return Math.cos((angle*2*PI)/360).toFixed(5)
+	}
+	$(function(){
+
+//		$('.childList').each(function(){
+//			for (var i=$(this).children('div').length-1;i>=0;i--) {
+//				var transform = `rotate(${i*10+10}deg)`
+				
+				$('.childList > div').each(function(){
+					var index = $(this).parent('.childList').children('div').index($(this))
+					var adverseIndex = $(this).parent('.childList').children('div').length - index -1
+					var x=0,y=0;
+					for (var i = 0 ;i<adverseIndex;i++) {
+						x +=Math.abs(cos(85 -5*i))*50;
+						y += Math.abs(sin(85-5*i))*50;
+					}
+//					if (adverseIndex == 0 ) {
+//						 x = 0;
+//						y = 0
+//					} else if(adverseIndex == 1){
+//						x = Math.abs(Math.cos(80))*50;
+//						y = Math.abs(Math.sin(80))*50;
+//					} else if(adverseIndex == 2){
+//						x= Math.abs(Math.cos(80))*50
+//						y=Math.abs(Math.sin(80))*50+Math.abs(Math.sin(70))*50;
+//					}
+
+					var transform = `translate(${x}px,${-y}px) rotate(${adverseIndex*5+5}deg) `
+					
+
+					$(this).css('transform',transform)
+
+					x=0;
+					y=0;
+
+				})
+//			}
+//			
+//
+//		})
+	})
+	$('.fixdFooterHeader > li').click(function(){
+		
+		if ($(this).children('.childList').hasClass('show')) {
+			$(this).children('.childList').removeClass("show")
+		} else{
+			$('.fixdFooterHeader > li').children('.childList').removeClass('show')
+			$(this).children('.childList').addClass('show')
+		}
+		
+	})
+
+</script>
+</body>
+</html>

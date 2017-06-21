@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+        }
+        #base{
+            border:1px solid #ccc;
+
+        }
+        #ball{
+            border: 1px solid #ccc;
+        }
+        .test{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        .test-child{
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+        .test-child > div{
+
+            width: 100px;
+            height:20px;
+            background: red;
+            border: 1px solid;
+            line-height: 20px;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="display: flex">
+        <canvas id="base" width="500" height="500"></canvas>
+
+        <canvas id="ball" width="500" height="500"></canvas>
+
+        <iframe id="clock" width="500" height="500" src="clock.html" scrolling="no" frameborder="no"></iframe>
+    </div>
+
+    <div class="test">
+        <div class="test-child">
+            <div style="transform: rotate(50deg) translate(30px,-15px) ;transform-origin: 100% 100%">aaaa</div>
+            <div style="transform: rotate(40deg) translate(20px,-5px) ;transform-origin: 100% 100%">aaaa</div>
+            <div style="transform: rotate(30deg) translate(10px) ;transform-origin: 100% 100%">aaaa</div>
+            <div style="transform: rotate(20deg) translate(5px) ;transform-origin: 100% 100%">aaaa</div>
+            <div style="transform: rotate(10deg) ;transform-origin: 100% 100%">aaaa</div>
+            <div>aaaa</div>
+        </div>
+    </div>
+</body>
+<script>
+    function setIframeHeight(id){
+        try{
+            var iframe = document.getElementById(id);
+            if(iframe.attachEvent){
+                iframe.attachEvent("onload", function(){
+                    iframe.height =  iframe.contentWindow.document.documentElement.scrollHeight;
+                });
+                return;
+            }else{
+                iframe.onload = function(){
+                    iframe.height = iframe.contentDocument.body.scrollHeight;
+
+                };
+                return;
+            }
+        }catch(e){
+            throw new Error('setIframeHeight Error');
+        }
+    }
+    function setIframeWidthAndHeight(id) {
+        try{
+            var iframe = document.getElementById(id);
+            if(iframe.attachEvent){
+                iframe.attachEvent("onload", function(){
+                    iframe.width =  iframe.contentWindow.document.documentElement.scrollWidth;
+                    iframe.height =  iframe.contentWindow.document.documentElement.scrollHeight;
+
+                });
+                return;
+            }else{
+                iframe.onload = function(){
+                    iframe.width = iframe.contentDocument.body.scrollWidth;
+                    iframe.height = iframe.contentDocument.body.clientHeight;
+                };
+                return;
+            }
+        }catch(e){
+            throw new Error('setIframeHeight Error');
+        }
+    }
+
+
+    setIframeWidthAndHeight("clock")
+</script>
+<script src="base.js"></script>
+
+</html>

@@ -1,0 +1,103 @@
+@charset "utf-8";
+@function set-text-color($background) {
+     @if (lightness($background) > 50) {
+          @return #000; 
+          } @else {
+          @return #fff; 
+          }
+          
+}; 
+@mixin flex-and-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+$headerHeight:120px;
+$blue:#00479d;
+$white:#fff;
+
+body{
+    background: url(../../../static/img/组-11.jpg);
+}
+#header{
+    height: $headerHeight;
+    display: flex;
+    .header-logo{
+        width: 228px;
+        background: url(../../../static/img/logo.jpg);
+    }
+    .header-nav{
+        height: $headerHeight;
+        display: flex;
+        box-sizing: border-box;
+        padding-left: 25px;
+        background-color: $blue;
+        width: 1465px;
+        .header-nav-list{
+            @include flex-and-wrap;
+            background-color: $blue;
+            flex: 1;
+            align-items: flex-start;
+            justify-content: center;
+            background-size: 100% 80px;
+            background-image: linear-gradient(to left, white 2px, black,transparent 2px);
+            background-repeat: no-repeat;
+            background-position: center;
+            img{
+                margin-top: 10px;
+                height: auto;
+            }
+            .header-nav-list-title{
+                color: set-text-color($blue);
+                
+            }
+        }
+        .header-nav-list:last-of-type{
+            background-image: linear-gradient(to left, white 0px, black,transparent 0);
+        }
+    }
+    .header-contact{
+       
+        flex: auto;
+        background: $blue;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px;
+        .header-contact-flex-container{
+            width: 180px;
+            display: flex;
+            align-self: center;
+            justify-content: space-between;
+            height: 65px;
+            .header-contact-left{
+                @include flex-and-wrap;
+                font-size: 14px;
+                width: 65px;
+                background: $white;
+                justify-content: center;
+                align-items: center;
+            }
+            .header-contact-right{
+                @include flex-and-wrap;
+                width: 110px;
+                align-content: space-between;
+                .header-contact-right-top{
+                    font-size: 14px;
+                    text-align: center;
+                    width: 100%;
+                    line-height: 30px;
+                    background: $white;
+                    img{
+                        vertical-align: middle;
+                        margin-right: 5px;
+                    }
+                }
+                .header-contact-right-bottom{
+                    @extend .header-contact-right-top
+                }
+            }
+        }
+        
+    }
+
+}
+

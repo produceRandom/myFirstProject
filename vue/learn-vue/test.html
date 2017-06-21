@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.min.js"></script>
+		<script src="https://unpkg.com/vue@2.3.3/dist/vue.min.js"></script>
+	</head>
+	<body>
+		<div class="list">
+			<ul>
+				<todo-item v-for="item in items" v-bind:todo="item"></todo-item>
+			</ul>
+			
+
+		</div>
+		<div class="add-item">
+			<div>
+				<span>添加新项目：</span>
+				<input type="text" v-model= "message"/>
+				<button v-on:click="addItem">添加</button>
+			</div>
+			<label>您要添加的是:{{message}}</label>
+			
+		</div>		
+		<div id="none"></div>
+		<script>
+			Vue.component("todo-item",{
+				props:['todo'],
+				template:'<li>{{todo.text}}</li>'
+			})
+			var list = new Vue({
+				el:".list",
+				data:{
+					items:[
+						{text:"学习javascript"},
+						{text:"学习vue"}
+					]
+				}
+			});
+			var addItem = new Vue({
+				el:".add-item",
+				data:{
+					message:""
+				},
+				methods:{
+					addItem:function(){
+						list.items.push({text:addItem.message})
+					}
+				}
+			})
+			
+			var data = {}
+			data.a = 1
+			var vm = new Vue({
+				el:"#none",
+				data:data,
+				created:function(){
+					console.log(this.a)
+				}
+			})
+//			console.log(data.a === vm.a)
+//			console.log(vm.$data === data)
+//			console.log(vm.$el === document.getElementById("none"))
+			
+		</script>
+	</body>
+</html>

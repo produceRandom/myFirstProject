@@ -1,0 +1,18 @@
+@charset "UTF-8";
+body { background: url(../../../static/img/组-11.jpg); }
+
+#header { height: 120px; display: flex; }
+#header .header-logo { width: 228px; background: url(../../../static/img/logo.jpg); }
+#header .header-nav { height: 120px; display: flex; box-sizing: border-box; padding-left: 25px; background-color: #00479d; width: 1465px; }
+#header .header-nav .header-nav-list { display: flex; flex-wrap: wrap; background-color: #00479d; flex: 1; align-items: flex-start; justify-content: center; background-size: 100% 80px; background-image: linear-gradient(to left, white 2px, black, transparent 2px); background-repeat: no-repeat; background-position: center; }
+#header .header-nav .header-nav-list img { margin-top: 10px; height: auto; }
+#header .header-nav .header-nav-list .header-nav-list-title { color: #fff; }
+#header .header-nav .header-nav-list:last-of-type { background-image: linear-gradient(to left, white 0px, black, transparent 0); }
+#header .header-contact { flex: auto; background: #00479d; display: flex; justify-content: flex-end; padding-right: 20px; }
+#header .header-contact .header-contact-flex-container { width: 180px; display: flex; align-self: center; justify-content: space-between; height: 65px; }
+#header .header-contact .header-contact-flex-container .header-contact-left { display: flex; flex-wrap: wrap; font-size: 14px; width: 65px; background: #fff; justify-content: center; align-items: center; }
+#header .header-contact .header-contact-flex-container .header-contact-right { display: flex; flex-wrap: wrap; width: 110px; align-content: space-between; }
+#header .header-contact .header-contact-flex-container .header-contact-right .header-contact-right-top, #header .header-contact .header-contact-flex-container .header-contact-right .header-contact-right-bottom { font-size: 14px; text-align: center; width: 100%; line-height: 30px; background: #fff; }
+#header .header-contact .header-contact-flex-container .header-contact-right .header-contact-right-top img, #header .header-contact .header-contact-flex-container .header-contact-right .header-contact-right-bottom img { vertical-align: middle; margin-right: 5px; }
+
+/*# sourceMappingURL=header.css.map */
