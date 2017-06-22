@@ -1,0 +1,98 @@
+@import "home.css";
+
+.spike-header{
+    padding: 0 100px;
+    .spike-header-title{
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    .spike-header-countdown{
+        margin-bottom: 40px;
+        .position{
+            display: inline-block;
+            line-height: 60px;
+            height: 60px;
+            overflow: hidden;
+            position: relative;
+            width: 60px;
+            font-size: 30px;
+        }
+        
+        .digit{
+            position:absolute;
+            display:block;
+            width: 60px;
+            height: 60px;
+            background-color:#444;
+            border-radius:0.2em;
+            text-align:center;
+            color:#fff;
+            letter-spacing:-1px;
+        }
+        
+        .digit.static{
+            box-shadow:1px 1px 1px rgba(4, 4, 4, 0.35);
+            border-radius: 5px;
+            background-image: linear-gradient(to bottom, #3A3A3A 50%, #3B3B3B 50%);
+        }
+
+        
+        .countDays{ /* display:none !important;*/ }
+        .countDiv0{ /* display:none !important;*/ }
+        .countHours{}
+        .countDiv1{}
+        .countMinutes{}
+        .countDiv2{}
+        .countSeconds{}
+        
+        
+        .countDiv{
+            display:inline-block;
+            width:16px;
+            height:60px;
+            position:relative;
+        }
+        
+        .countDiv:before,
+        .countDiv:after{
+            position:absolute;
+            width:5px;
+            height:5px;
+            background-color:#444;
+            border-radius:50%;
+            top:40px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            box-shadow:1px 1px 1px rgba(4, 4, 4, 0.5);
+            content:'';
+        }
+        
+        .countDiv:after{
+            top:20px;
+        }
+    }
+    .spike-header-timeslot{
+        height: 100px;
+        padding: 5px 0;
+        box-sizing: border-box;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        display: flex;
+        margin-bottom: 40px;
+        .spike-header-timeslot-timepoint{
+            width: 215px;
+            margin: 0 22.5px;
+            box-sizing: border-box;            
+            text-align: center;
+            p:first-of-type{
+                font-size: 20px;
+                line-height: 50px;
+            }
+        }
+        .spike-header-timeslot-timepoint-current{
+            color: white;
+            background: #cdad90;
+        }
+    }
+}

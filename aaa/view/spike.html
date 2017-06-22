@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../style/css/reset.css" />
+		<link rel="stylesheet" href="../style/css/spike.css" />
+		<script type="text/javascript" src="../script/use/vue.min.js" ></script>
+	</head>
+	<body>
+		<div id="spike">
+			<div class="spike-header">
+				<p class="spike-header-title">the field left</p>
+					<div>
+						<div class="spike-header-countdown">
+					</div>
+					<div class="spike-header-timeslot">
+						<div class="spike-header-timeslot-timepoint" v-for = "item in timeArr" v-bind:class="{'spike-header-timeslot-timepoint-current' : item.whetherSelect}" v-on:click = "selected(item)">
+							<p>{{item.time}}</p>
+							<p>Has been robbed</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main">
+				<div v-for="item in commodity" class="main-commodity-pic" v-on:mouseover="toggleModal(item)" v-on:mouseout="item.seen=true">
+					<img v-bind:src="item.imgurl"/>
+					<div class="main-commodity-pic-shadow"  v-bind:class="{hidden:item.seen}">
+						<p class="main-commodity-name">Bow earrings</p>
+						<p class="main-commodity-price">$36.6</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	<script type="text/javascript" src="../script/use/jquery.min.js" ></script>	
+	<script type="text/javascript" src="../script/spike.js" ></script>
+	</body>
+</html>
